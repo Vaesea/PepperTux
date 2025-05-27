@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://bb86po67j1xk"]
+
+[ext_resource type="Texture2D" uid="uid://djfe66orbhyq5" path="res://data/images/particles/snow.png" id="1_v6jo2"]
+
+[sub_resource type="Curve" id="Curve_5glcl"]
+_limits = [-360.0, 360.0, 0.0, 1.0]
+_data = [Vector2(0, 12.1349), 0.0, 0.0, 0, 0, Vector2(1, -12.1348), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_fq33t"]
+curve = SubResource("Curve_5glcl")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_vs3kc"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(100, 1, 1)
+angle_min = -243.7
+angle_max = 265.8
+angle_curve = SubResource("CurveTexture_fq33t")
+gravity = Vector3(45, 98, 0)
+turbulence_enabled = true
+turbulence_influence_min = 0.02
+turbulence_influence_max = 0.08
+
+[node name="GPUParticles2D" type="GPUParticles2D"]
+scale = Vector2(59.235, 1.155)
+amount = 1000
+texture = ExtResource("1_v6jo2")
+lifetime = 23.25
+preprocess = 30.0
+process_material = SubResource("ParticleProcessMaterial_vs3kc")

@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://frt2r73163ur"]
+
+[ext_resource type="Script" uid="uid://b8fnqcfnk4f5u" path="res://scenes_and_scripts/menu/main_menu.gd" id="1_80mcc"]
+[ext_resource type="Texture2D" uid="uid://cmnt76lhl1vgq" path="res://data/images/title/background.jpg" id="1_nhj51"]
+[ext_resource type="Texture2D" uid="uid://ccgyn7rqarmiu" path="res://data/images/title/logo.png" id="2_dmlv8"]
+[ext_resource type="FontFile" uid="uid://dlrv58x2b88ss" path="res://data/fonts/Dekko-Regular.ttf" id="3_dmlv8"]
+[ext_resource type="PackedScene" uid="uid://bb86po67j1xk" path="res://scenes_and_scripts/particles/snow.tscn" id="4_h8x48"]
+
+[node name="MainMenu" type="Node2D"]
+script = ExtResource("1_80mcc")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.481789, 0.481789, 0.481789, 1)
+position = Vector2(320, 240)
+texture = ExtResource("1_nhj51")
+
+[node name="CanvasLayer" parent="." instance=ExtResource("4_h8x48")]
+position = Vector2(1, -53)
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(320, 128)
+texture = ExtResource("2_dmlv8")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 245.0
+offset_top = 281.0
+offset_right = 423.0
+offset_bottom = 317.0
+theme_override_fonts/normal_font = ExtResource("3_dmlv8")
+theme_override_font_sizes/normal_font_size = 21
+text = "Press Enter To Start"

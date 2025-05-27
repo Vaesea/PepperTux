@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://obaghlkrwrr6"]
+
+[ext_resource type="Script" uid="uid://bd5wfesfb7s4p" path="res://scenes_and_scripts/instant_death.gd" id="1_yr8ec"]
+[ext_resource type="AudioStream" uid="uid://d2yslwnbs7nl0" path="res://data/sounds/hurt.wav" id="2_1s0vd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ht8d1"]
+size = Vector2(251680, 32)
+
+[node name="InstantDeath" type="Area2D"]
+collision_layer = 16
+collision_mask = 2
+script = ExtResource("1_yr8ec")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(125840, 16)
+shape = SubResource("RectangleShape2D_ht8d1")
+
+[node name="sound" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = ExtResource("2_1s0vd")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

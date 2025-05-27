@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://bck0nuey8s6tl"]
+
+[ext_resource type="Script" uid="uid://bnd351bte7qyg" path="res://scenes_and_scripts/characters/playable/tux.gd" id="1_q76ha"]
+[ext_resource type="SpriteFrames" uid="uid://dnwkc8gy0d684" path="res://spriteframes/tux.tres" id="1_y536j"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q76ha"]
+size = Vector2(23, 64.9922)
+
+[node name="Tux" type="CharacterBody2D"]
+z_index = 50
+collision_layer = 2
+collision_mask = 31
+script = ExtResource("1_q76ha")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("1_y536j")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 0.00390816)
+shape = SubResource("RectangleShape2D_q76ha")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+limit_left = 0
+limit_top = 0
+limit_bottom = 480

@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://t4nprb3xvyoh"]
+
+[ext_resource type="SpriteFrames" uid="uid://4r1s3g5dfsx7" path="res://spriteframes/coin.tres" id="1_wma77"]
+[ext_resource type="Script" uid="uid://benb555l745x3" path="res://scenes_and_scripts/objects/coin.gd" id="2_l2mxq"]
+[ext_resource type="AudioStream" uid="uid://k7olbde6fxdi" path="res://data/sounds/distro.wav" id="3_y3h1m"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wma77"]
+radius = 14.0
+
+[node name="Node2D" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(16, 16)
+sprite_frames = ExtResource("1_wma77")
+script = ExtResource("2_l2mxq")
+
+[node name="Area2D" type="Area2D" parent="AnimatedSprite2D"]
+collision_layer = 8
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/Area2D"]
+shape = SubResource("CircleShape2D_wma77")
+
+[node name="sound" type="AudioStreamPlayer" parent="AnimatedSprite2D"]
+stream = ExtResource("3_y3h1m")
+
+[connection signal="body_entered" from="AnimatedSprite2D/Area2D" to="AnimatedSprite2D" method="_on_area_2d_body_entered"]
