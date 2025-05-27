@@ -17,4 +17,4 @@ there will be multiple worlds (8 of them?)
 
 ## Credits
 
-Literally everything in data is from SuperTux, I think.
+Will be in next commit (I prefer editing .md files through GitHub)
