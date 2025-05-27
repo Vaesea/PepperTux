@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://cudr7apr54dja"]
+
+[ext_resource type="Script" uid="uid://ctvykiqxg0xxu" path="res://scenes_and_scripts/level_end.gd" id="1_4y6mi"]
+[ext_resource type="AudioStream" uid="uid://blkmlbg1ce374" path="res://data/music/leveldone.ogg" id="2_nxhxf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_buq8s"]
+size = Vector2(32, 1600)
+
+[node name="Area2D" type="Area2D"]
+collision_layer = 16
+collision_mask = 2
+script = ExtResource("1_4y6mi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(16, -768)
+shape = SubResource("RectangleShape2D_buq8s")
+
+[node name="sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_nxhxf")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

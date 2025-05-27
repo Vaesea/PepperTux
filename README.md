@@ -1,5 +1,5 @@
-# PepperTux
-A fanmade SuperTux fangame (basically said fanmade game twice) made in Godot. The SuperTux logo is a placeholder here, the name "PepperTux" means nothing.
+# pepperTux
+A fanmade SuperTux fangame (basically said fanmade game twice) made in Godot. The SuperTux logo was a placeholder here until it was changed to pepperTux, the name "pepperTux" means nothing.
 
 This isn't a remake / recreation of SuperTux Milestone 1.
 
