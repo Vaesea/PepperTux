@@ -11,8 +11,7 @@ config_version=5
 [application]
 
 config/name="pepperTux"
-config/description="A SuperTux Fangame (I don't know whether that's the correct word?). Read tux.gd and main_menu.gd for more information.
-The SuperTux logo is a placeholder."
+config/description="A SuperTux Fangame (I don't know whether that's the correct word?). Read tux.gd and main_menu.gd for more information."
 config/version="0.0.0.0"
 run/main_scene="uid://frt2r73163ur"
 config/features=PackedStringArray("4.4", "GL Compatibility")
