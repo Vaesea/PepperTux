@@ -17,4 +17,20 @@ there will be multiple worlds (8 of them?)
 
 ## Credits
 
-Will be in next commit (I prefer editing .md files through GitHub)
+### Code
+Vaesea (I used some tutorials, I think at least most of them are in the code. I don't really know how to code)
+
+### Art
+SuperTux Team
+
+### Music
+SuperTux Team
+
+Bart (https://opengameart.org/content/airship-song)
+
+Remaxim (https://opengameart.org/content/airship-song-orchestral-remix) (This is the one used in this game)
+
+Lukas Nystrand (as Mortimer Twang) (This is copied from the SuperTux credits)
+
+### Level Design
+Vaesea (me again. there's no actual levels yet)
