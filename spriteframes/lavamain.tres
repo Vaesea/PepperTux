@@ -1,0 +1,39 @@
+[gd_resource type="SpriteFrames" load_steps=6 format=3 uid="uid://dpx888o4nxu8e"]
+
+[ext_resource type="Texture2D" uid="uid://cf58jp4bxeldx" path="res://data/images/tiles/liquid/lava.png" id="1_uk5x5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rgmge"]
+atlas = ExtResource("1_uk5x5")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b53rc"]
+atlas = ExtResource("1_uk5x5")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fmhjh"]
+atlas = ExtResource("1_uk5x5")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s377s"]
+atlas = ExtResource("1_uk5x5")
+region = Rect2(96, 32, 32, 32)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rgmge")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b53rc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fmhjh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s377s")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]

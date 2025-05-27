@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_buq8s"]
 size = Vector2(32, 1600)
 
-[node name="Area2D" type="Area2D"]
+[node name="LevelEnd" type="Area2D"]
 collision_layer = 16
 collision_mask = 2
 script = ExtResource("1_4y6mi")

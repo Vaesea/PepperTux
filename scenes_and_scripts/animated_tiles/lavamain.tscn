@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://qv8q6o62tnyo"]
+
+[ext_resource type="SpriteFrames" uid="uid://dpx888o4nxu8e" path="res://spriteframes/lavamain.tres" id="1_8tpie"]
+[ext_resource type="Script" uid="uid://dscm07x0y8bgm" path="res://scenes_and_scripts/animated_tiles/animatedtile.gd" id="2_urf0l"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D"]
+sprite_frames = ExtResource("1_8tpie")
+script = ExtResource("2_urf0l")

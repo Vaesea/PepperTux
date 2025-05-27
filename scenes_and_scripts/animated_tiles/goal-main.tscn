@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://bv6aw347wm3g0"]
+
+[ext_resource type="SpriteFrames" uid="uid://bbjjty2b0undo" path="res://spriteframes/goal-1.tres" id="1_02aw5"]
+[ext_resource type="Script" uid="uid://dscm07x0y8bgm" path="res://scenes_and_scripts/animated_tiles/animatedtile.gd" id="2_0ybty"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D"]
+sprite_frames = ExtResource("1_02aw5")
+script = ExtResource("2_0ybty")

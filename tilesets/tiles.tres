@@ -1,12 +1,16 @@
-[gd_resource type="TileSet" load_steps=23 format=3 uid="uid://cphge636dp4k4"]
+[gd_resource type="TileSet" load_steps=29 format=3 uid="uid://cphge636dp4k4"]
 
 [ext_resource type="Texture2D" uid="uid://n8525dxq4t76" path="res://data/images/tiles/snow/snow.png" id="1_5v7s8"]
 [ext_resource type="Texture2D" uid="uid://chq6qkpow77ne" path="res://data/images/tiles/snow/darksnow.png" id="2_58e86"]
 [ext_resource type="Texture2D" uid="uid://bogvbld5q4m8i" path="res://data/images/tiles/snow/igloo.png" id="3_fu510"]
 [ext_resource type="Texture2D" uid="uid://182wrq7cu0b4" path="res://data/images/tiles/background/poletop.png" id="3_pvrr4"]
+[ext_resource type="PackedScene" uid="uid://bv6aw347wm3g0" path="res://scenes_and_scripts/animated_tiles/goal-main.tscn" id="4_4qukl"]
 [ext_resource type="Texture2D" uid="uid://dteqr0jbm7tx3" path="res://data/images/tiles/castle/grey_brick.png" id="4_qfd38"]
 [ext_resource type="Texture2D" uid="uid://wwh707ev5nw0" path="res://data/images/tiles/castle/nolok-statue.png" id="5_6orl4"]
+[ext_resource type="PackedScene" uid="uid://cn1hxfgr34tf7" path="res://scenes_and_scripts/animated_tiles/goal-top.tscn" id="5_usx2y"]
 [ext_resource type="Texture2D" uid="uid://ughnm442vjul" path="res://data/images/tiles/block/block.png" id="6_fu510"]
+[ext_resource type="PackedScene" uid="uid://bv7l7vrubvxfu" path="res://scenes_and_scripts/animated_tiles/lavatop.tscn" id="6_hwy2e"]
+[ext_resource type="PackedScene" uid="uid://qv8q6o62tnyo" path="res://scenes_and_scripts/animated_tiles/lavamain.tscn" id="7_7lmse"]
 [ext_resource type="Texture2D" uid="uid://rugcpy0mlu5m" path="res://data/images/tiles/background/background.png" id="8_8s6r8"]
 [ext_resource type="Texture2D" uid="uid://caljhf5wigqqa" path="res://data/images/tiles/background/cloud.png" id="9_4qukl"]
 [ext_resource type="Texture2D" uid="uid://cqls755kbhvmd" path="res://data/images/tiles/background/grass1.png" id="10_usx2y"]
@@ -129,6 +133,16 @@ texture = ExtResource("3_pvrr4")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 0:1/0 = 0
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_4qukl"]
+resource_name = "Goal Tiles"
+scenes/1/scene = ExtResource("4_4qukl")
+scenes/2/scene = ExtResource("5_usx2y")
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_aerbi"]
+resource_name = "Lava Tiles"
+scenes/1/scene = ExtResource("6_hwy2e")
+scenes/2/scene = ExtResource("7_7lmse")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j5qaw"]
 texture = ExtResource("3_fu510")
@@ -314,3 +328,5 @@ sources/7 = SubResource("TileSetAtlasSource_vyk6a")
 sources/8 = SubResource("TileSetAtlasSource_a23yo")
 sources/9 = SubResource("TileSetAtlasSource_j4jfm")
 sources/10 = SubResource("TileSetAtlasSource_7lmse")
+sources/11 = SubResource("TileSetScenesCollectionSource_4qukl")
+sources/12 = SubResource("TileSetScenesCollectionSource_aerbi")
