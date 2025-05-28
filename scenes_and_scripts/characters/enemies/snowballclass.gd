@@ -7,7 +7,7 @@ var direction = -1
 
 # This script is from an older thing I made with some edits.
 
-# TODO: find a way to remove direction without breaking the snowball, doesn't seem to be needed anymore.
+# TODO: Find a way to remove direction without breaking the snowball, doesn't seem to be needed anymore.
 # TODO: Add a way for snowballs to be killed by the player.
 
 func _ready() -> void:
@@ -32,3 +32,11 @@ func flip():
 func squished():
 	speed = 0
 	$AnimatedSprite2D.play("squished")
+
+func kill():
+	print("The player walked into a Snowball!")
+	Global.total_coins = 0
+	get_tree().paused = true
+	$"/root/EndScreen".visible = true
+	await get_tree().create_timer(1).timeout
+	get_tree().reload_current_scene()
