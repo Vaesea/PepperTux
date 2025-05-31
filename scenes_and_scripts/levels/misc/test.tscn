@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://bi07di33om3d0"]
+[gd_scene load_steps=13 format=4 uid="uid://bi07di33om3d0"]
 
 [ext_resource type="Script" uid="uid://cgawg58rbcc7i" path="res://scenes_and_scripts/levels/level.gd" id="1_2yuvf"]
 [ext_resource type="Texture2D" uid="uid://dg3ylaanoee0i" path="res://data/images/background/arctis2.jpg" id="1_5s31t"]
@@ -8,7 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://dsbqcv8s57lce" path="res://scenes_and_scripts/characters/enemies/snowball.tscn" id="4_gioao"]
 [ext_resource type="AudioStream" uid="uid://ycv32k7xccsb" path="res://data/music/chipdisko.ogg" id="5_stdix"]
 [ext_resource type="PackedScene" uid="uid://t4nprb3xvyoh" path="res://scenes_and_scripts/objects/coin.tscn" id="6_6pa7q"]
-[ext_resource type="PackedScene" uid="uid://c4o3mm4arty67" path="res://scenes_and_scripts/dangerous_tiles/snow_spike.tscn" id="7_gwuxi"]
 [ext_resource type="PackedScene" uid="uid://cudr7apr54dja" path="res://scenes_and_scripts/LevelEnd.tscn" id="7_y2xi5"]
 [ext_resource type="PackedScene" uid="uid://10srfatlh0kw" path="res://scenes_and_scripts/EndScreen.tscn" id="8_144ij"]
 [ext_resource type="PackedScene" uid="uid://obaghlkrwrr6" path="res://scenes_and_scripts/instant_death.tscn" id="9_4tspo"]
@@ -56,9 +55,6 @@ position = Vector2(1, 0)
 tile_map_data = PackedByteArray("AABMAAQACwAAAAAAAgBMAAUACwAAAAAAAQBMAAYACwAAAAAAAQBMAAcACwAAAAAAAQBMAAgACwAAAAAAAQBMAAkACwAAAAAAAQBMAAoACwAAAAAAAQBMAAsACwAAAAAAAQBMAAwACwAAAAAAAQBDAAwAAQAAAAAAAABDAA0AAQAAAAEAAABDAA4AAQABAAIAAABEAAwAAQADAAEAAABEAA0AAQABAAIAAABEAA4AAQABAAIAAABFAAwAAQACAAAAAABFAA0AAQACAAEAAABFAA4AAQABAAIAAABCAA0AAQAAAAAAAABCAA4AAQAAAAEAAABGAA0AAQACAAAAAABGAA4AAQACAAEAAAA1AA0AAQAAAAAAAAA1AA4AAQAAAAEAAAA2AA0AAQABAAAAAAA2AA4AAQABAAEAAAA3AA0AAQABAAAAAAA3AA4AAQABAAEAAAA4AA0AAQACAAAAAAA4AA4AAQACAAEAAAA9AA0AAQAAAAAAAAA9AA4AAQAAAAEAAAA+AA0AAQACAAAAAAA+AA4AAQACAAEAAAA6AA4AAQABAAAAAAA7AA4AAQABAAAAAAAtAA0AAQABAAAAAAAtAA4AAQABAAEAAAAuAA0AAQABAAAAAAAuAA4AAQABAAEAAAAvAA0AAQACAAAAAAAvAA4AAQACAAEAAAAsAA0AAQABAAAAAAAsAA4AAQABAAEAAAArAA0AAQABAAAAAAArAA4AAQABAAEAAAAqAA0AAQABAAAAAAAqAA4AAQABAAEAAAApAA0AAQABAAAAAAApAA4AAQABAAEAAAAoAA0AAQABAAAAAAAoAA4AAQABAAEAAAAnAA0AAQABAAAAAAAnAA4AAQABAAEAAAAmAA0AAQAAAAAAAAAmAA4AAQAAAAEAAAAeAA0AAQACAAAAAAAeAA4AAQACAAEAAAAcAA0AAQABAAAAAAAcAA4AAQABAAEAAAAdAA0AAQABAAAAAAAdAA4AAQABAAEAAAAbAA0AAQABAAAAAAAbAA4AAQABAAEAAAAaAA0AAQABAAAAAAAaAA4AAQABAAEAAAAZAA0AAQABAAAAAAAZAA4AAQABAAEAAAAYAA0AAQABAAAAAAAYAA4AAQABAAEAAAAXAA0AAQABAAAAAAAXAA4AAQABAAEAAAAWAA0AAQABAAAAAAAWAA4AAQABAAEAAAAVAA0AAQAAAAAAAAAVAA4AAQAAAAEAAAAJAA0AAQADAAAAAAAJAA4AAQADAAEAAAAIAA4AAQAAAAAAAAADAA4AAQABAAAAAAAEAA4AAQABAAAAAAAFAA4AAQACAAAAAABBAA4AAQABAAAAAABAAA4AAQABAAAAAAA/AA4AAQABAAAAAAA8AA4AAQABAAAAAAA5AA4AAQABAAAAAAA0AA4AAQABAAAAAAAzAA4AAQABAAAAAAAyAA4AAQABAAAAAAAxAA4AAQABAAAAAAAwAA4AAQABAAAAAAAhAA4AAQAAAAAAAAAiAA4AAQABAAAAAAAjAA4AAQACAAAAAAAOAA4AAQAAAAAAAAAPAA4AAQABAAAAAAAQAA4AAQACAAAAAAACAA4AAQABAAAAAAABAA4AAQAAAAAAAABEAAsAAQADAAAAAAA=")
 tile_set = ExtResource("2_b7tqr")
 
-[node name="SnowSpike" parent="Tilemaps" instance=ExtResource("7_gwuxi")]
-position = Vector2(320, 368)
-
 [node name="Coins" type="Node" parent="."]
 
 [node name="AnimatedSprite2D" parent="Coins" instance=ExtResource("6_6pa7q")]
@@ -82,7 +78,7 @@ position = Vector2(1120, 384)
 position = Vector2(256, 384)
 
 [node name="Jumpy" parent="Enemies" instance=ExtResource("9_gh1vu")]
-position = Vector2(912, 192)
+position = Vector2(1088, 96)
 
 [node name="EndScreen" parent="." instance=ExtResource("8_144ij")]
 
