@@ -1,18 +1,13 @@
 extends CharacterBody2D
 
+class_name Tux
+
 # https://www.youtube.com/watch?v=aQazVHDztsg
+# https://www.youtube.com/playlist?list=PLMb6Yv6-w-RWngEjn_YeMzVwgyXBZ73Bf
 
-# so basically im not trying to make a supertux milestone 1 port / remake to godot (if you want that, play supertux classic)
-
-# this is meant to be a supertux fangame where it's like supertux with new levels and in a different thing, 
-# this one being in godot.
-
-# there will be a health system (similar to retux) and the way to get more health is to touch egg power-ups
-
-# there will be multiple worlds (8 of them?)
-
-# TODO: duck when the player holds down. i have no idea how to do this
-# TODO: fix the animation stuff. player doesn't go into walking animation when walking left.
+var max_health = 3
+var health = 0
+var can_take_damage = true
 
 var walk_speed = 320.0
 var acceleration = 0.1
@@ -23,6 +18,7 @@ var decelerate_on_jump_release = 0.01
 
 # Adds to player group.
 func _ready() -> void:
+	health = max_health
 	add_to_group("Player")
 
 func _physics_process(delta: float) -> void:
@@ -32,11 +28,12 @@ func _physics_process(delta: float) -> void:
 
 	# Handle jump.
 	if Input.is_action_just_pressed("player_jump") and is_on_floor():
+		$jumpsound.play()
 		var current_speed = velocity.x
 		if current_speed == 320.0 or current_speed == -320.0: # there has to be a better way to do this.
-			velocity.y = jump_force # full jump
+			velocity.y = jump_force
 		else:
-			velocity.y = low_jump_force # low jump
+			velocity.y = low_jump_force
 
 	if Input.is_action_just_released("player_jump") and velocity.y < 0:
 		velocity.y *= decelerate_on_jump_release
@@ -65,3 +62,28 @@ func _physics_process(delta: float) -> void:
 		$AnimatedSprite2D.flip_h = false
 
 	move_and_slide()
+
+func take_damage(damage_amount: int):
+	if can_take_damage == true:
+		iframes()
+		
+		health -= damage_amount
+		
+		$hurtsound.play()
+		
+		if health <= 0:
+			die()
+
+func die():
+	print("The player died!")
+	Global.total_coins = 0
+	get_tree().paused = true
+	$hurtsound.play()
+	$"/root/EndScreen".visible = true
+	await get_tree().create_timer(1).timeout
+	get_tree().reload_current_scene()
+
+func iframes():
+	can_take_damage = false
+	await get_tree().create_timer(0.5).timeout
+	can_take_damage = true

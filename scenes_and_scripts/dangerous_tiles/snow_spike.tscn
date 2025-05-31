@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://c4o3mm4arty67"]
+
+[ext_resource type="Script" uid="uid://h2kikfnv5c6t" path="res://scenes_and_scripts/dangerous_tiles/snowspike.gd" id="1_76g47"]
+[ext_resource type="Texture2D" uid="uid://c580njx7075cy" path="res://data/images/objects/spike/snowspike.png" id="1_xxovw"]
+
+[node name="SnowSpike" type="Sprite2D"]
+texture = ExtResource("1_xxovw")
+script = ExtResource("1_76g47")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 32
+collision_mask = 2
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(16, 16, 16, 6, 8, -16, -7, -16, -16, 6, -16, 16)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

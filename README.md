@@ -3,9 +3,7 @@ A fanmade SuperTux fangame (basically said fanmade game twice) made in Godot. Th
 
 This isn't a remake / recreation of SuperTux Milestone 1.
 
-Read tux.gd for more information.
-
-## That one part in tux.gd if you don't want to go to the file
+## That one part that was in tux.gd
 
 so basically im not trying to make a supertux milestone 1 port / remake to godot (if you want that, play supertux classic)
 

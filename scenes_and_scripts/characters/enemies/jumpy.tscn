@@ -3,12 +3,12 @@
 [ext_resource type="Script" uid="uid://8tq2lfbo00qh" path="res://scenes_and_scripts/characters/enemies/jumpy.gd" id="1_dc5ss"]
 [ext_resource type="SpriteFrames" uid="uid://bx27kb5ay5iv3" path="res://spriteframes/jumpy.tres" id="1_e5j0m"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_j4rkd"]
-size = Vector2(29, 33)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dc5ss"]
+size = Vector2(30, 33)
 
 [node name="Jumpy" type="CharacterBody2D"]
 collision_layer = 4
-collision_mask = 7
+collision_mask = 3
 script = ExtResource("1_dc5ss")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -17,7 +17,7 @@ sprite_frames = ExtResource("1_e5j0m")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(15, 16.5)
-shape = SubResource("RectangleShape2D_j4rkd")
+shape = SubResource("RectangleShape2D_dc5ss")
 
 [node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
 position = Vector2(16, -9.0599e-07)

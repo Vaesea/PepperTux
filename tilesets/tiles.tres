@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=31 format=3 uid="uid://cphge636dp4k4"]
+[gd_resource type="TileSet" load_steps=33 format=3 uid="uid://cphge636dp4k4"]
 
 [ext_resource type="Texture2D" uid="uid://n8525dxq4t76" path="res://data/images/tiles/snow/snow.png" id="1_5v7s8"]
 [ext_resource type="Texture2D" uid="uid://chq6qkpow77ne" path="res://data/images/tiles/snow/darksnow.png" id="2_58e86"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://cof820ebljqjd" path="res://data/images/tiles/snow/unisolid.png" id="8_7lmse"]
 [ext_resource type="Texture2D" uid="uid://rugcpy0mlu5m" path="res://data/images/tiles/background/background.png" id="8_8s6r8"]
 [ext_resource type="Texture2D" uid="uid://caljhf5wigqqa" path="res://data/images/tiles/background/cloud.png" id="9_4qukl"]
+[ext_resource type="PackedScene" uid="uid://c4o3mm4arty67" path="res://scenes_and_scripts/dangerous_tiles/snow_spike.tscn" id="9_aerbi"]
 [ext_resource type="Texture2D" uid="uid://cqls755kbhvmd" path="res://data/images/tiles/background/grass1.png" id="10_usx2y"]
 [ext_resource type="Texture2D" uid="uid://duq20rt4yg0kt" path="res://data/images/tiles/background/grass2.png" id="11_hwy2e"]
 
@@ -231,6 +232,10 @@ texture_region_size = Vector2i(32, 32)
 4:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 4:4/0/physics_layer_0/polygon_0/one_way = true
 
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_vyk6a"]
+resource_name = "Spikes"
+scenes/1/scene = ExtResource("9_aerbi")
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j5qaw"]
 texture = ExtResource("3_fu510")
 texture_region_size = Vector2i(32, 32)
@@ -418,3 +423,4 @@ sources/11 = SubResource("TileSetScenesCollectionSource_4qukl")
 sources/12 = SubResource("TileSetScenesCollectionSource_aerbi")
 sources/0 = SubResource("TileSetAtlasSource_jb4fk")
 sources/13 = SubResource("TileSetAtlasSource_0mn7m")
+sources/14 = SubResource("TileSetScenesCollectionSource_vyk6a")
