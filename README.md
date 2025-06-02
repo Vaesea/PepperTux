@@ -21,10 +21,10 @@ there will be multiple worlds (8 of them?)
 Vaesea (I used some tutorials, I think at least most of them are in the code. I don't really know how to code)
 
 ### Art
-SuperTux Team
+SuperTux Team (The art is from SuperTux)
 
 ### Music
-SuperTux Team
+SuperTux Team (The music is from SuperTux)
 
 Bart (https://opengameart.org/content/airship-song)
 
