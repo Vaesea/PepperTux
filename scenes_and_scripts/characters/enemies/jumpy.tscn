@@ -10,6 +10,7 @@ size = Vector2(30, 33)
 size = Vector2(30, 33)
 
 [node name="Jumpy" type="CharacterBody2D"]
+z_index = 50
 collision_layer = 64
 script = ExtResource("1_dc5ss")
 

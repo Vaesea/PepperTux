@@ -5,6 +5,8 @@ class_name Tux
 # https://www.youtube.com/watch?v=aQazVHDztsg
 # https://www.youtube.com/playlist?list=PLMb6Yv6-w-RWngEjn_YeMzVwgyXBZ73Bf
 
+enum States {NORMAL, FIRE}
+
 var max_health = 3
 var health = 0
 var can_take_damage = true

@@ -67,6 +67,8 @@ ui_enter={
 2d_physics/layer_3="Enemies"
 2d_physics/layer_4="Objects"
 2d_physics/layer_5="Misc"
+2d_physics/layer_6="Spikes"
+2d_physics/layer_7="Enemies2"
 
 [rendering]
 

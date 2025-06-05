@@ -1,0 +1,34 @@
+[gd_resource type="SpriteFrames" load_steps=5 format=3 uid="uid://t1eumivm8o8n"]
+
+[ext_resource type="Texture2D" uid="uid://cd0jjh44l3d2o" path="res://data/images/characters/enemies/mrs_snowball/left-0.png" id="1_ajqjs"]
+[ext_resource type="Texture2D" uid="uid://cpfs8row7sdr1" path="res://data/images/characters/enemies/mrs_snowball/mrs-squished-left.png" id="1_byod5"]
+[ext_resource type="Texture2D" uid="uid://bj6trj5g646j1" path="res://data/images/characters/enemies/mrs_snowball/left-1.png" id="2_byod5"]
+[ext_resource type="Texture2D" uid="uid://cne8a00j73cme" path="res://data/images/characters/enemies/mrs_snowball/left-2.png" id="3_0nfwf"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_byod5")
+}],
+"loop": true,
+"name": &"squished",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ajqjs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_byod5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_0nfwf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_byod5")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
