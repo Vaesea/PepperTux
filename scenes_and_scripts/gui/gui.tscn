@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://dplbvlrsook58"]
+
+[ext_resource type="SpriteFrames" uid="uid://cfvifkix0yctt" path="res://spriteframes/hearts.tres" id="1_g1l2i"]
+[ext_resource type="Script" uid="uid://c5l7aya1rqo2j" path="res://scenes_and_scripts/gui/hearts.gd" id="2_u6joh"]
+[ext_resource type="Texture2D" uid="uid://xpash6ef4hu7" path="res://data/images/objects/coin/coin1.png" id="3_3ep6s"]
+[ext_resource type="FontFile" uid="uid://dlrv58x2b88ss" path="res://data/fonts/Dekko-Regular.ttf" id="4_ne0ld"]
+[ext_resource type="Script" uid="uid://cc1ymqmaej0m4" path="res://scenes_and_scripts/gui/coin_label.gd" id="5_4p04y"]
+
+[node name="GUI" type="CanvasLayer"]
+process_mode = 3
+
+[node name="Panel" type="Panel" parent="."]
+self_modulate = Color(1, 1, 1, 0.505882)
+offset_left = -2.0
+offset_top = -3.0
+offset_right = 103.0
+offset_bottom = 87.0
+
+[node name="Hearts" type="AnimatedSprite2D" parent="."]
+process_mode = 3
+position = Vector2(4, 4)
+sprite_frames = ExtResource("1_g1l2i")
+animation = &"3"
+centered = false
+script = ExtResource("2_u6joh")
+
+[node name="Coin" type="Sprite2D" parent="."]
+position = Vector2(4, 50)
+texture = ExtResource("3_3ep6s")
+centered = false
+
+[node name="CoinLabel" type="Label" parent="Coin"]
+offset_left = 35.0
+offset_top = 3.0
+offset_right = 98.0
+offset_bottom = 30.0
+theme_override_fonts/font = ExtResource("4_ne0ld")
+text = "x"
+script = ExtResource("5_4p04y")

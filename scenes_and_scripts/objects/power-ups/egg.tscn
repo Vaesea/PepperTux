@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://diy0hfrp3xng3"]
+
+[ext_resource type="Texture2D" uid="uid://furqyll6w62k" path="res://data/images/objects/powerups/egg/egg.png" id="1_gwilv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xv67j"]
+size = Vector2(32, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gwilv"]
+size = Vector2(32, 32)
+
+[node name="Egg" type="CharacterBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_gwilv")
+centered = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(16, 16)
+shape = SubResource("RectangleShape2D_xv67j")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(16, 16)
+shape = SubResource("RectangleShape2D_gwilv")

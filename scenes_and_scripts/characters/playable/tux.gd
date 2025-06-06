@@ -84,6 +84,9 @@ func _physics_process(delta: float) -> void:
 
 	if direction == -1:
 		facing_direction = -1
+	
+	if TuxManager.health > 3:
+		TuxManager.health = 3
 
 	move_and_slide()
 

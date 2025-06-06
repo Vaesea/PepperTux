@@ -5,7 +5,6 @@ extends Area2D
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Player"):
 		print("The level is ending.")
-		Global.total_coins = 0
 		get_tree().paused = true
 		$sound.play()
 		await get_tree().create_timer(7.8).timeout

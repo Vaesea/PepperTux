@@ -2,10 +2,13 @@ extends CharacterBody2D
 
 class_name Snowball
 
+# Movement
 var speed = 80
 var direction = -1
-var fireball_death_jump = -400
-var fireball_death_other_thing = -200
+
+# Fireball Death
+var fireball_death_jump = -200
+var fireball_death_other_thing = -100
 
 # This script is from an older thing I made with some edits.
 
@@ -17,9 +20,8 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	velocity += get_gravity() * delta
-
 	velocity.x = speed * direction
-	
+
 	if $WallDetection.is_colliding():
 		flip()
 
@@ -39,7 +41,8 @@ func squished():
 	queue_free()
 
 func firedeath():
-	speed = -200
+	speed = fireball_death_other_thing
+	$sound2.play()
 	velocity.y += fireball_death_jump
 	$AnimatedSprite2D.flip_v = true
 	$Area2D/CollisionShape2D.set_deferred("disabled", true)

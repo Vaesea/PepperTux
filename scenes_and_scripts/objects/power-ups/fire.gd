@@ -19,10 +19,9 @@ func _physics_process(delta: float) -> void:
 	
 	if is_on_floor():
 		how_many_times_jumped += 1
-		velocity.y = jump # Why not use + instead of + ? Godot is annoying, that's why. Standalone expression.
-		print(how_many_times_jumped) # It's here to see how many times the fireball jumped. Might remove it soon? The fireball seems to work.
+		velocity.y = jump
 	
-	if how_many_times_jumped == how_many_times_can_jump:
+	if how_many_times_jumped == how_many_times_can_jump or is_on_wall() or is_on_ceiling():
 		queue_free()
 
 	move_and_slide()

@@ -1,0 +1,41 @@
+[gd_resource type="SpriteFrames" load_steps=5 format=3 uid="uid://cfvifkix0yctt"]
+
+[ext_resource type="Texture2D" uid="uid://bh66j812do5ij" path="res://data/images/gui/hearts/hearts_3.png" id="1_bujpy"]
+[ext_resource type="Texture2D" uid="uid://br7vg41egi80s" path="res://data/images/gui/hearts/hearts_0.png" id="1_f5fdu"]
+[ext_resource type="Texture2D" uid="uid://btnoch4f55sga" path="res://data/images/gui/hearts/hearts_1.png" id="2_ybjkl"]
+[ext_resource type="Texture2D" uid="uid://das346teoi0mm" path="res://data/images/gui/hearts/hearts_2.png" id="3_ugxl3"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_f5fdu")
+}],
+"loop": true,
+"name": &"0",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ybjkl")
+}],
+"loop": true,
+"name": &"1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_ugxl3")
+}],
+"loop": true,
+"name": &"2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_bujpy")
+}],
+"loop": true,
+"name": &"3",
+"speed": 5.0
+}]
