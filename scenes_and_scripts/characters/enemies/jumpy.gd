@@ -18,6 +18,8 @@ func _physics_process(delta: float) -> void:
 func _on_area_2d_body_entered(body) -> void:
 	if body.is_in_group("Player"):
 		body.take_damage(1)
+		if TuxManager.current_state == TuxManager.States.Fire:
+			TuxManager.current_state = TuxManager.States.Normal
 
 	if body.is_in_group("FireBullet"):
 		body.queue_free()
