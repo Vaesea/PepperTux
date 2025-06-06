@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://borcf5cgkioqr"
-path="res://.godot/imported/largetux-star-1.png-6af96949813324aa030092048e626469.ctex"
+uid="uid://ba5psq726ycbm"
+path="res://.godot/imported/walk-1.png-d9c73f17b3564a9dc2603b33c120f111.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://data/images/characters/playable/tux/largetux-star-1.png"
-dest_files=["res://.godot/imported/largetux-star-1.png-6af96949813324aa030092048e626469.ctex"]
+source_file="res://data/images/characters/playable/tux/hat/walk-1.png"
+dest_files=["res://.godot/imported/walk-1.png-d9c73f17b3564a9dc2603b33c120f111.ctex"]
 
 [params]
 

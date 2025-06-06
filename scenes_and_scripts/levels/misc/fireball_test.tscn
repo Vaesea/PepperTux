@@ -1,0 +1,54 @@
+[gd_scene load_steps=11 format=4 uid="uid://drrudlbbrscac"]
+
+[ext_resource type="Script" uid="uid://cgawg58rbcc7i" path="res://scenes_and_scripts/levels/level.gd" id="1_bpun2"]
+[ext_resource type="Texture2D" uid="uid://dg3ylaanoee0i" path="res://data/images/background/arctis2.jpg" id="1_oul3n"]
+[ext_resource type="PackedScene" uid="uid://bck0nuey8s6tl" path="res://scenes_and_scripts/characters/playable/tux.tscn" id="2_wcriw"]
+[ext_resource type="TileSet" uid="uid://cphge636dp4k4" path="res://tilesets/tiles.tres" id="3_0bpva"]
+[ext_resource type="PackedScene" uid="uid://obaghlkrwrr6" path="res://scenes_and_scripts/instant_death.tscn" id="3_pj218"]
+[ext_resource type="PackedScene" uid="uid://b74gxgkr0qnhw" path="res://scenes_and_scripts/objects/power-ups/fire.tscn" id="4_o73xx"]
+[ext_resource type="PackedScene" uid="uid://10srfatlh0kw" path="res://scenes_and_scripts/EndScreen.tscn" id="5_bpun2"]
+[ext_resource type="PackedScene" uid="uid://00yyg3g1m0rd" path="res://scenes_and_scripts/objects/power-ups/fire_flower.tscn" id="5_wcriw"]
+[ext_resource type="PackedScene" uid="uid://dsbqcv8s57lce" path="res://scenes_and_scripts/characters/enemies/snowball.tscn" id="7_0bpva"]
+[ext_resource type="PackedScene" uid="uid://7k1uqe0h0cwk" path="res://scenes_and_scripts/characters/enemies/jumpy.tscn" id="8_o73xx"]
+
+[node name="FireballTest" type="Node2D"]
+script = ExtResource("1_bpun2")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+z_index = -300
+motion_scale = Vector2(0.5, 0.5)
+motion_mirroring = Vector2(640, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(320, 240)
+texture = ExtResource("1_oul3n")
+
+[node name="InstantDeath" parent="ParallaxBackground/ParallaxLayer" instance=ExtResource("3_pj218")]
+position = Vector2(0, 544)
+
+[node name="Tux" parent="." instance=ExtResource("2_wcriw")]
+position = Vector2(32, 384)
+
+[node name="Tilemaps" type="Node" parent="."]
+
+[node name="Interactive" type="TileMapLayer" parent="Tilemaps"]
+tile_map_data = PackedByteArray("AAAAAAwAAAABAAAAAAAAAA0AAAABAAEAAAAAAA4AAAABAAIAAAABAAwAAAABAAAAAAABAA0AAAABAAEAAAABAA4AAAABAAIAAAACAAwAAAABAAAAAAACAA0AAAABAAEAAAACAA4AAAABAAIAAAADAAwAAAABAAAAAAADAA0AAAABAAEAAAADAA4AAAABAAIAAAAEAAwAAAABAAAAAAAEAA0AAAABAAEAAAAEAA4AAAABAAIAAAAFAAwAAAABAAAAAAAFAA0AAAABAAEAAAAFAA4AAAABAAIAAAAGAAwAAAABAAAAAAAGAA0AAAABAAEAAAAGAA4AAAABAAIAAAAHAAwAAAABAAAAAAAHAA0AAAABAAEAAAAHAA4AAAABAAIAAAAIAAwAAAABAAAAAAAIAA0AAAABAAEAAAAIAA4AAAABAAIAAAAJAAwAAAABAAAAAAAJAA0AAAABAAEAAAAJAA4AAAABAAIAAAAKAAwAAAAFAAQAAAAKAA0AAAAFAAUAAAAKAA4AAAABAAIAAAALAAwAAAAGAAQAAAALAA0AAAAGAAUAAAALAA4AAAABAAIAAAAMAAwAAAAHAAQAAAAMAA0AAAAHAAUAAAAMAA4AAAABAAIAAAANAAwAAAAIAAQAAAANAA0AAAAIAAUAAAANAA4AAAABAAIAAAAOAAwAAAABAAAAAAAOAA0AAAABAAEAAAAOAA4AAAABAAIAAAAPAAwAAAABAAAAAAAPAA0AAAABAAEAAAAPAA4AAAABAAIAAAAQAAwAAAABAAAAAAAQAA0AAAABAAEAAAAQAA4AAAABAAIAAAARAAwAAAABAAAAAAARAA0AAAABAAEAAAARAA4AAAABAAIAAAASAAwAAAABAAAAAAASAA0AAAABAAEAAAASAA4AAAABAAIAAAATAAwAAAABAAAAAAATAA0AAAABAAEAAAATAA4AAAABAAIAAAAUAAwAAAABAAAAAAAUAA0AAAABAAEAAAAUAA4AAAABAAIAAAAVAAwAAAABAAAAAAAVAA0AAAABAAEAAAAVAA4AAAABAAIAAAAWAAwAAAABAAAAAAAWAA0AAAABAAEAAAAWAA4AAAABAAIAAAAXAAwAAAABAAAAAAAXAA0AAAABAAEAAAAXAA4AAAABAAIAAAAYAAwAAAABAAAAAAAYAA0AAAABAAEAAAAYAA4AAAABAAIAAAAZAAwAAAABAAAAAAAZAA0AAAABAAEAAAAZAA4AAAABAAIAAAAaAAwAAAABAAAAAAAaAA0AAAABAAEAAAAaAA4AAAABAAIAAAAbAAwAAAABAAAAAAAbAA0AAAABAAEAAAAbAA4AAAABAAIAAAAcAAwAAAABAAAAAAAcAA0AAAABAAEAAAAcAA4AAAABAAIAAAAdAAwAAAABAAAAAAAdAA0AAAABAAEAAAAdAA4AAAABAAIAAAAeAAwAAAABAAAAAAAeAA0AAAABAAEAAAAeAA4AAAABAAIAAAAfAAwAAAABAAAAAAAfAA0AAAABAAEAAAAfAA4AAAABAAIAAAAgAAwAAAABAAAAAAAgAA0AAAABAAEAAAAgAA4AAAABAAIAAAAhAAwAAAABAAAAAAAhAA0AAAABAAEAAAAhAA4AAAABAAIAAAAiAAwAAAABAAAAAAAiAA0AAAABAAEAAAAiAA4AAAABAAIAAAAjAAwAAAABAAAAAAAjAA0AAAABAAEAAAAjAA4AAAABAAIAAAAkAAwAAAABAAAAAAAkAA0AAAABAAEAAAAkAA4AAAABAAIAAAAlAAwAAAABAAAAAAAlAA0AAAABAAEAAAAlAA4AAAABAAIAAAAmAAwAAAABAAAAAAAmAA0AAAABAAEAAAAmAA4AAAABAAIAAAAnAAwAAAABAAAAAAAnAA0AAAABAAEAAAAnAA4AAAABAAIAAAALAAsAAAAGAAMAAAAMAAsAAAAHAAMAAAA=")
+tile_set = ExtResource("3_0bpva")
+
+[node name="Fireball" parent="Tilemaps" instance=ExtResource("4_o73xx")]
+position = Vector2(64, 384)
+
+[node name="FireFlower" parent="Tilemaps" instance=ExtResource("5_wcriw")]
+position = Vector2(224, 384)
+
+[node name="EndScreen" parent="." instance=ExtResource("5_bpun2")]
+
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="Snowball" parent="Enemies" instance=ExtResource("7_0bpva")]
+position = Vector2(608, 384)
+
+[node name="Jumpy" parent="Enemies" instance=ExtResource("8_o73xx")]
+position = Vector2(672, 352)

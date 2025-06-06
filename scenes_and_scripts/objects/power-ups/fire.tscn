@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://b74gxgkr0qnhw"]
+
+[ext_resource type="Script" uid="uid://digqo7e15ka6t" path="res://scenes_and_scripts/objects/power-ups/fire.gd" id="1_5ftvg"]
+[ext_resource type="SpriteFrames" uid="uid://dl3nhqhlopj1a" path="res://spriteframes/fireball.tres" id="1_cy867"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cy867"]
+radius = 7.2111
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5ftvg"]
+radius = 7.0
+
+[node name="Fireball" type="CharacterBody2D"]
+collision_layer = 256
+script = ExtResource("1_5ftvg")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("1_cy867")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_cy867")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 256
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_5ftvg")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

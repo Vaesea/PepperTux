@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dnpnxls1cbyuc"
-path="res://.godot/imported/largetux-star-0.png-b9199d5d175a2ccc3f21249dc59a1c3f.ctex"
+path="res://.godot/imported/largetux-star-0.png-1ba0d2133b5de7daded2137089a2af84.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://data/images/characters/playable/tux/largetux-star-0.png"
-dest_files=["res://.godot/imported/largetux-star-0.png-b9199d5d175a2ccc3f21249dc59a1c3f.ctex"]
+source_file="res://data/images/characters/playable/tux/star/largetux-star-0.png"
+dest_files=["res://.godot/imported/largetux-star-0.png-1ba0d2133b5de7daded2137089a2af84.ctex"]
 
 [params]
 

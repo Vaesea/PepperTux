@@ -1,6 +1,5 @@
 extends Snowball
 
-# WARNING!!!!!!!! probably terrible code ahead
 # TODO: some sort of error appears when loading the snowball, but everything works fine. i might need someone to help fix that error becasue i have no idea what's going on?
 
 func _on_area_2d_body_entered(body) -> void:
@@ -12,9 +11,11 @@ func _on_area_2d_body_entered(body) -> void:
 				body.velocity.y = -512
 			else:
 				body.velocity.y = -256
-			$sound.play()
-			$Area2D/CollisionShape2D.set_deferred("disabled", true)
-			await get_tree().create_timer(1).timeout
-			queue_free()
 		else:
 			body.take_damage(1)
+			if TuxManager.current_state == TuxManager.States.Fire:
+				TuxManager.current_state = TuxManager.States.Normal
+ 
+	if body.is_in_group("FireBullet"):
+		firedeath()
+		body.queue_free()

@@ -1,3 +1,35 @@
-[gd_scene format=3 uid="uid://00yyg3g1m0rd"]
+[gd_scene load_steps=5 format=3 uid="uid://00yyg3g1m0rd"]
 
-[node name="FireFlower" type="StaticBody2D"]
+[ext_resource type="SpriteFrames" uid="uid://crkws54rmt55c" path="res://spriteframes/fire_flower.tres" id="1_he1dx"]
+[ext_resource type="Script" uid="uid://c6aqxtkusdxp1" path="res://scenes_and_scripts/objects/power-ups/fire_flower.gd" id="1_t6qg6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_he1dx"]
+size = Vector2(32, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t6qg6"]
+size = Vector2(32, 32)
+
+[node name="FireFlower" type="CharacterBody2D"]
+z_index = 50
+collision_layer = 128
+floor_max_angle = 1.48353
+floor_snap_length = 10.0
+script = ExtResource("1_t6qg6")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(16, 16)
+sprite_frames = ExtResource("1_he1dx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(16, 16)
+shape = SubResource("RectangleShape2D_he1dx")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(16, 16)
+shape = SubResource("RectangleShape2D_t6qg6")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

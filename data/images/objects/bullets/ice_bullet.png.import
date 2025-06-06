@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dawv4thh23iio"
-path="res://.godot/imported/largetux-star-2.png-6aa95afb355a8cb20da09db96ea73dde.ctex"
+uid="uid://cgxulwb877b3k"
+path="res://.godot/imported/ice_bullet.png-7b8fa9bbe5616a487282cb6e241254c3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://data/images/characters/playable/tux/largetux-star-2.png"
-dest_files=["res://.godot/imported/largetux-star-2.png-6aa95afb355a8cb20da09db96ea73dde.ctex"]
+source_file="res://data/images/objects/bullets/ice_bullet.png"
+dest_files=["res://.godot/imported/ice_bullet.png-7b8fa9bbe5616a487282cb6e241254c3.ctex"]
 
 [params]
 

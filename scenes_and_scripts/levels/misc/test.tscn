@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://10srfatlh0kw" path="res://scenes_and_scripts/EndScreen.tscn" id="8_144ij"]
 [ext_resource type="PackedScene" uid="uid://obaghlkrwrr6" path="res://scenes_and_scripts/instant_death.tscn" id="9_4tspo"]
 [ext_resource type="PackedScene" uid="uid://7k1uqe0h0cwk" path="res://scenes_and_scripts/characters/enemies/jumpy.tscn" id="9_gh1vu"]
-[ext_resource type="PackedScene" uid="uid://bkosf06tgl1ke" path="res://scenes_and_scripts/characters/enemies/mrs_snowball.tscn" id="13_gwuxi"]
+[ext_resource type="PackedScene" uid="uid://00yyg3g1m0rd" path="res://scenes_and_scripts/objects/power-ups/fire_flower.tscn" id="13_gwuxi"]
 
 [node name="testlevel" type="Node2D"]
 script = ExtResource("1_2yuvf")
@@ -36,7 +36,7 @@ stream = ExtResource("5_stdix")
 autoplay = true
 
 [node name="Tux" parent="." instance=ExtResource("3_b7tqr")]
-position = Vector2(576, 384)
+position = Vector2(32, 384)
 
 [node name="Tilemaps" type="Node" parent="."]
 
@@ -90,5 +90,5 @@ position = Vector2(-32, 544)
 position = Vector2(2400, 384)
 scene = "res://scenes_and_scripts/menu/main_menu.tscn"
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("13_gwuxi")]
-position = Vector2(704, 267)
+[node name="FireFlower" parent="." instance=ExtResource("13_gwuxi")]
+position = Vector2(320, 352)
