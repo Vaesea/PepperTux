@@ -10,6 +10,7 @@
 process_mode = 3
 
 [node name="Panel" type="Panel" parent="."]
+process_mode = 3
 self_modulate = Color(1, 1, 1, 0.505882)
 offset_left = -2.0
 offset_top = -3.0
@@ -25,11 +26,13 @@ centered = false
 script = ExtResource("2_u6joh")
 
 [node name="Coin" type="Sprite2D" parent="."]
+process_mode = 3
 position = Vector2(4, 50)
 texture = ExtResource("3_3ep6s")
 centered = false
 
 [node name="CoinLabel" type="Label" parent="Coin"]
+process_mode = 3
 offset_left = 35.0
 offset_top = 3.0
 offset_right = 98.0

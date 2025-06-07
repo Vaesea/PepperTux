@@ -1,0 +1,69 @@
+[gd_scene load_steps=11 format=3 uid="uid://j5c2jvtl6f4d"]
+
+[ext_resource type="Script" uid="uid://cgawg58rbcc7i" path="res://scenes_and_scripts/levels/level.gd" id="1_8mtnu"]
+[ext_resource type="Texture2D" uid="uid://dg3ylaanoee0i" path="res://data/images/background/arctis2.jpg" id="2_x0jc8"]
+[ext_resource type="PackedScene" uid="uid://bb86po67j1xk" path="res://scenes_and_scripts/particles/snow.tscn" id="3_ry7ts"]
+[ext_resource type="AudioStream" uid="uid://ycv32k7xccsb" path="res://data/music/chipdisko.ogg" id="4_birwa"]
+[ext_resource type="PackedScene" uid="uid://bck0nuey8s6tl" path="res://scenes_and_scripts/characters/playable/tux.tscn" id="5_es8sp"]
+[ext_resource type="TileSet" uid="uid://cphge636dp4k4" path="res://tilesets/tiles.tres" id="6_81hu6"]
+[ext_resource type="PackedScene" uid="uid://dplbvlrsook58" path="res://scenes_and_scripts/gui/gui.tscn" id="10_rl532"]
+[ext_resource type="PackedScene" uid="uid://10srfatlh0kw" path="res://scenes_and_scripts/EndScreen.tscn" id="11_skx1q"]
+[ext_resource type="PackedScene" uid="uid://obaghlkrwrr6" path="res://scenes_and_scripts/instant_death.tscn" id="12_h1t7e"]
+[ext_resource type="PackedScene" uid="uid://cudr7apr54dja" path="res://scenes_and_scripts/LevelEnd.tscn" id="13_tea0x"]
+
+[node name="testlevel" type="Node2D"]
+script = ExtResource("1_8mtnu")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+z_index = -300
+motion_scale = Vector2(0.5, 0.5)
+motion_mirroring = Vector2(640, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(320, 240)
+texture = ExtResource("2_x0jc8")
+
+[node name="GPUParticles2D" parent="." instance=ExtResource("3_ry7ts")]
+position = Vector2(5600, -64)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_birwa")
+autoplay = true
+
+[node name="Tux" parent="." instance=ExtResource("5_es8sp")]
+position = Vector2(32, 384)
+
+[node name="Tilemaps" type="Node" parent="."]
+
+[node name="Background" type="TileMapLayer" parent="Tilemaps"]
+z_index = -100
+position = Vector2(1, 0)
+tile_set = ExtResource("6_81hu6")
+
+[node name="Interactive" type="TileMapLayer" parent="Tilemaps"]
+tile_set = ExtResource("6_81hu6")
+
+[node name="Foreground" type="TileMapLayer" parent="Tilemaps"]
+z_index = 100
+position = Vector2(1, 0)
+tile_set = ExtResource("6_81hu6")
+
+[node name="Coins" type="Node2D" parent="."]
+
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="Bonus Blocks" type="Node2D" parent="."]
+
+[node name="GUI" parent="." instance=ExtResource("10_rl532")]
+
+[node name="EndScreen" parent="." instance=ExtResource("11_skx1q")]
+layer = 3
+
+[node name="InstantDeath" parent="." instance=ExtResource("12_h1t7e")]
+position = Vector2(-32, 544)
+
+[node name="LevelEnd" parent="." instance=ExtResource("13_tea0x")]
+position = Vector2(-96, 416)
+scene = "res://scenes_and_scripts/menu/main_menu.tscn"

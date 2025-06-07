@@ -29,3 +29,15 @@ offset_bottom = 317.0
 theme_override_fonts/normal_font = ExtResource("3_dmlv8")
 theme_override_font_sizes/normal_font_size = 21
 text = "Press Enter To Start"
+
+[node name="Label" type="Label" parent="."]
+offset_left = 4.0
+offset_top = 394.0
+offset_right = 356.0
+offset_bottom = 481.0
+theme_override_fonts/font = ExtResource("3_dmlv8")
+text = "pepperTux 0.0.0
+Most things are from SuperTux.
+This fangame is free and open source, you can find it on GitHub."
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

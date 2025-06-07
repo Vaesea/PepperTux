@@ -1,0 +1,88 @@
+[gd_scene load_steps=14 format=4 uid="uid://0yua6rx0g1tv"]
+
+[ext_resource type="Script" uid="uid://cgawg58rbcc7i" path="res://scenes_and_scripts/levels/level.gd" id="1_awd58"]
+[ext_resource type="Texture2D" uid="uid://dg3ylaanoee0i" path="res://data/images/background/arctis2.jpg" id="2_ur05i"]
+[ext_resource type="PackedScene" uid="uid://bb86po67j1xk" path="res://scenes_and_scripts/particles/snow.tscn" id="3_4lvpt"]
+[ext_resource type="AudioStream" uid="uid://ycv32k7xccsb" path="res://data/music/chipdisko.ogg" id="4_t72gp"]
+[ext_resource type="PackedScene" uid="uid://bck0nuey8s6tl" path="res://scenes_and_scripts/characters/playable/tux.tscn" id="5_x1xjk"]
+[ext_resource type="TileSet" uid="uid://cphge636dp4k4" path="res://tilesets/tiles.tres" id="6_djan3"]
+[ext_resource type="PackedScene" uid="uid://bmxanlg1leng8" path="res://scenes_and_scripts/objects/bonus_block.tscn" id="7_ur05i"]
+[ext_resource type="PackedScene" uid="uid://dplbvlrsook58" path="res://scenes_and_scripts/gui/gui.tscn" id="7_vjqk0"]
+[ext_resource type="PackedScene" uid="uid://cr3arfboeqw0r" path="res://scenes_and_scripts/objects/brick_block.tscn" id="8_t72gp"]
+[ext_resource type="PackedScene" uid="uid://10srfatlh0kw" path="res://scenes_and_scripts/EndScreen.tscn" id="8_v6ghg"]
+[ext_resource type="PackedScene" uid="uid://obaghlkrwrr6" path="res://scenes_and_scripts/instant_death.tscn" id="9_kqgjn"]
+[ext_resource type="PackedScene" uid="uid://cudr7apr54dja" path="res://scenes_and_scripts/LevelEnd.tscn" id="10_cbmce"]
+[ext_resource type="PackedScene" uid="uid://dsbqcv8s57lce" path="res://scenes_and_scripts/characters/enemies/snowball.tscn" id="12_4lvpt"]
+
+[node name="testlevel" type="Node2D"]
+script = ExtResource("1_awd58")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+z_index = -300
+motion_scale = Vector2(0.5, 0.5)
+motion_mirroring = Vector2(640, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(320, 240)
+texture = ExtResource("2_ur05i")
+
+[node name="GPUParticles2D" parent="." instance=ExtResource("3_4lvpt")]
+position = Vector2(5600, -64)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_t72gp")
+autoplay = true
+
+[node name="Tux" parent="." instance=ExtResource("5_x1xjk")]
+position = Vector2(32, 384)
+
+[node name="Tilemaps" type="Node" parent="."]
+
+[node name="Background" type="TileMapLayer" parent="Tilemaps"]
+z_index = -100
+position = Vector2(1, 0)
+tile_set = ExtResource("6_djan3")
+
+[node name="Interactive" type="TileMapLayer" parent="Tilemaps"]
+tile_map_data = PackedByteArray("AAAAAAwAAAABAAAAAAAAAA0AAAABAAEAAAAAAA4AAAABAAIAAAABAAwAAAABAAAAAAABAA0AAAABAAEAAAABAA4AAAABAAIAAAACAAwAAAABAAAAAAACAA0AAAABAAEAAAACAA4AAAABAAIAAAADAAwAAAABAAAAAAADAA0AAAABAAEAAAADAA4AAAABAAIAAAAEAAwAAAABAAAAAAAEAA0AAAABAAEAAAAEAA4AAAABAAIAAAAFAAwAAAABAAAAAAAFAA0AAAABAAEAAAAFAA4AAAABAAIAAAAGAAwAAAABAAAAAAAGAA0AAAABAAEAAAAGAA4AAAABAAIAAAAHAAwAAAABAAAAAAAHAA0AAAABAAEAAAAHAA4AAAABAAIAAAAIAAwAAAABAAAAAAAIAA0AAAABAAEAAAAIAA4AAAABAAIAAAAJAAwAAAABAAAAAAAJAA0AAAABAAEAAAAJAA4AAAABAAIAAAAKAAwAAAABAAAAAAAKAA0AAAABAAEAAAAKAA4AAAABAAIAAAALAAwAAAABAAAAAAALAA0AAAABAAEAAAALAA4AAAABAAIAAAAMAAwAAAABAAAAAAAMAA0AAAABAAEAAAAMAA4AAAABAAIAAAANAAwAAAABAAAAAAANAA0AAAABAAEAAAANAA4AAAABAAIAAAAOAAwAAAABAAAAAAAOAA0AAAABAAEAAAAOAA4AAAABAAIAAAAPAAwAAAABAAAAAAAPAA0AAAABAAEAAAAPAA4AAAABAAIAAAAQAAwAAAABAAAAAAAQAA0AAAABAAEAAAAQAA4AAAABAAIAAAARAAwAAAABAAAAAAARAA0AAAABAAEAAAARAA4AAAABAAIAAAASAAwAAAABAAAAAAASAA0AAAABAAEAAAASAA4AAAABAAIAAAATAAwAAAABAAAAAAATAA0AAAABAAEAAAATAA4AAAABAAIAAAAUAAwAAAABAAAAAAAUAA0AAAABAAEAAAAUAA4AAAABAAIAAAAVAAwAAAABAAAAAAAVAA0AAAABAAEAAAAVAA4AAAABAAIAAAAWAAwAAAABAAAAAAAWAA0AAAABAAEAAAAWAA4AAAABAAIAAAAXAAwAAAABAAAAAAAXAA0AAAABAAEAAAAXAA4AAAABAAIAAAAYAAwAAAABAAAAAAAYAA0AAAABAAEAAAAYAA4AAAABAAIAAAAZAAwAAAABAAAAAAAZAA0AAAABAAEAAAAZAA4AAAABAAIAAAAaAAwAAAABAAAAAAAaAA0AAAABAAEAAAAaAA4AAAABAAIAAAAbAAwAAAABAAAAAAAbAA0AAAABAAEAAAAbAA4AAAABAAIAAAAcAAwAAAABAAAAAAAcAA0AAAABAAEAAAAcAA4AAAABAAIAAAAdAAwAAAABAAAAAAAdAA0AAAABAAEAAAAdAA4AAAABAAIAAAAeAAwAAAABAAAAAAAeAA0AAAABAAEAAAAeAA4AAAABAAIAAAAfAAwAAAABAAAAAAAfAA0AAAABAAEAAAAfAA4AAAABAAIAAAAgAAwAAAADAAMAAAAgAA0AAAAEAAIAAAAgAA4AAAABAAIAAAAhAA4AAAABAAIAAAAhAA0AAAABAAIAAAAhAAwAAAABAAEAAAAgAAsAAAAAAAAAAAAhAAsAAAABAAAAAAAiAAsAAAABAAAAAAAiAAwAAAABAAEAAAAiAA0AAAABAAIAAAAiAA4AAAABAAIAAAAjAAsAAAABAAAAAAAjAAwAAAABAAEAAAAjAA0AAAABAAIAAAAjAA4AAAABAAIAAAAkAAsAAAABAAAAAAAkAAwAAAABAAEAAAAkAA0AAAABAAIAAAAkAA4AAAABAAIAAAAlAAsAAAABAAAAAAAlAAwAAAABAAEAAAAlAA0AAAABAAIAAAAlAA4AAAABAAIAAAAmAAsAAAABAAAAAAAmAAwAAAABAAEAAAAmAA0AAAABAAIAAAAmAA4AAAABAAIAAAAnAAsAAAABAAAAAAAnAAwAAAABAAEAAAAnAA0AAAABAAIAAAAnAA4AAAABAAIAAAAoAAsAAAABAAAAAAAoAAwAAAABAAEAAAAoAA0AAAABAAIAAAAoAA4AAAABAAIAAAApAAsAAAABAAAAAAApAAwAAAABAAEAAAApAA0AAAABAAIAAAApAA4AAAABAAIAAAAqAAsAAAABAAAAAAAqAAwAAAABAAEAAAAqAA0AAAABAAIAAAAqAA4AAAABAAIAAAArAAsAAAABAAAAAAArAAwAAAABAAEAAAArAA0AAAABAAIAAAArAA4AAAABAAIAAAAsAAsAAAABAAAAAAAsAAwAAAABAAEAAAAsAA0AAAABAAIAAAAsAA4AAAABAAIAAAAtAAsAAAABAAAAAAAtAAwAAAABAAEAAAAtAA0AAAABAAIAAAAtAA4AAAABAAIAAAAuAAsAAAABAAAAAAAuAAwAAAABAAEAAAAuAA0AAAABAAIAAAAuAA4AAAABAAIAAAAvAAwAAAACAAEAAAAvAA0AAAACAAIAAAAvAA4AAAACAAIAAAAvAAsAAAACAAAAAAA=")
+tile_set = ExtResource("6_djan3")
+
+[node name="Foreground" type="TileMapLayer" parent="Tilemaps"]
+z_index = 100
+position = Vector2(1, 0)
+tile_set = ExtResource("6_djan3")
+
+[node name="Coins" type="Node2D" parent="."]
+
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="Snowball" parent="Enemies" instance=ExtResource("12_4lvpt")]
+position = Vector2(864, 384)
+
+[node name="Blocks" type="Node2D" parent="."]
+
+[node name="BonusBlock" parent="Blocks" instance=ExtResource("7_ur05i")]
+position = Vector2(576, 288)
+
+[node name="BonusBlock2" parent="Blocks" instance=ExtResource("7_ur05i")]
+position = Vector2(608, 288)
+
+[node name="BrickBlock" parent="Blocks" instance=ExtResource("8_t72gp")]
+position = Vector2(544, 288)
+
+[node name="BrickBlock2" parent="Blocks" instance=ExtResource("8_t72gp")]
+position = Vector2(640, 288)
+
+[node name="GUI" parent="." instance=ExtResource("7_vjqk0")]
+
+[node name="EndScreen" parent="." instance=ExtResource("8_v6ghg")]
+layer = 3
+
+[node name="InstantDeath" parent="." instance=ExtResource("9_kqgjn")]
+position = Vector2(-32, 544)
+
+[node name="LevelEnd" parent="." instance=ExtResource("10_cbmce")]
+position = Vector2(-96, 416)
+scene = "res://scenes_and_scripts/menu/main_menu.tscn"
