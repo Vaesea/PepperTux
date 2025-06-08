@@ -26,7 +26,9 @@ position = Vector2(320, 240)
 texture = ExtResource("2_x0jc8")
 
 [node name="GPUParticles2D" parent="." instance=ExtResource("3_ry7ts")]
-position = Vector2(5600, -64)
+position = Vector2(20576, -64)
+scale = Vector2(216.355, 1.155)
+amount = 1200
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_birwa")

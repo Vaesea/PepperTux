@@ -118,6 +118,54 @@ position = Vector2(5216, 256)
 [node name="Coin20" parent="Coins" instance=ExtResource("7_x1xjk")]
 position = Vector2(5248, 288)
 
+[node name="Coin21" parent="Coins" instance=ExtResource("7_x1xjk")]
+position = Vector2(6496, 128)
+
+[node name="Coin22" parent="Coins" instance=ExtResource("7_x1xjk")]
+position = Vector2(6528, 96)
+
+[node name="Coin23" parent="Coins" instance=ExtResource("7_x1xjk")]
+position = Vector2(6560, 96)
+
+[node name="Coin24" parent="Coins" instance=ExtResource("7_x1xjk")]
+position = Vector2(6592, 128)
+
+[node name="Coin25" parent="Coins" instance=ExtResource("7_x1xjk")]
+position = Vector2(8672, 256)
+
+[node name="Coin26" parent="Coins" instance=ExtResource("7_x1xjk")]
+position = Vector2(8704, 224)
+
+[node name="Coin27" parent="Coins" instance=ExtResource("7_x1xjk")]
+position = Vector2(8736, 224)
+
+[node name="Coin28" parent="Coins" instance=ExtResource("7_x1xjk")]
+position = Vector2(8768, 256)
+
+[node name="Coin29" parent="Coins" instance=ExtResource("7_x1xjk")]
+position = Vector2(10048, 256)
+
+[node name="Coin30" parent="Coins" instance=ExtResource("7_x1xjk")]
+position = Vector2(10080, 224)
+
+[node name="Coin31" parent="Coins" instance=ExtResource("7_x1xjk")]
+position = Vector2(10112, 224)
+
+[node name="Coin32" parent="Coins" instance=ExtResource("7_x1xjk")]
+position = Vector2(10144, 256)
+
+[node name="Coin33" parent="Coins" instance=ExtResource("7_x1xjk")]
+position = Vector2(11488, 224)
+
+[node name="Coin34" parent="Coins" instance=ExtResource("7_x1xjk")]
+position = Vector2(11520, 192)
+
+[node name="Coin35" parent="Coins" instance=ExtResource("7_x1xjk")]
+position = Vector2(11552, 192)
+
+[node name="Coin36" parent="Coins" instance=ExtResource("7_x1xjk")]
+position = Vector2(11584, 224)
+
 [node name="Coin8" parent="Coins" instance=ExtResource("7_x1xjk")]
 position = Vector2(2944, 128)
 
@@ -333,4 +381,4 @@ position = Vector2(-32, 544)
 
 [node name="LevelEnd" parent="." instance=ExtResource("10_cbmce")]
 position = Vector2(14432, 256)
-scene = "res://scenes_and_scripts/menu/main_menu.tscn"
+scene = "res://scenes_and_scripts/levels/world1/level2.tscn"
