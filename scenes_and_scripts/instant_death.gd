@@ -9,6 +9,7 @@ func _on_body_entered(body) -> void:
 		Global.total_coins = 0
 		TuxManager.health = 0
 		$"/root/GUI".visible = false
+		TuxManager.current_state = TuxManager.States.Normal
 		get_tree().paused = true
 		$"/root/EndScreen".visible = true
 		$sound.play()

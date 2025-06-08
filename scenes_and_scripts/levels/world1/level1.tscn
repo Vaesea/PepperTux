@@ -68,7 +68,7 @@ position = Vector2(1184, 160)
 position = Vector2(1216, 128)
 
 [node name="Coin3" parent="Coins" instance=ExtResource("7_x1xjk")]
-position = Vector2(1248, 128)
+position = Vector2(1248, 96)
 
 [node name="Coin4" parent="Coins" instance=ExtResource("7_x1xjk")]
 position = Vector2(1280, 128)
@@ -83,7 +83,7 @@ position = Vector2(1376, 96)
 position = Vector2(1440, 96)
 
 [node name="Coin6" parent="Coins" instance=ExtResource("7_x1xjk")]
-position = Vector2(1408, 96)
+position = Vector2(1408, 64)
 
 [node name="Coin7" parent="Coins" instance=ExtResource("7_x1xjk")]
 position = Vector2(2912, 96)
