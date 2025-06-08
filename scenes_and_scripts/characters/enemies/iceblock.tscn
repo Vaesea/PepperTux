@@ -1,0 +1,47 @@
+[gd_scene load_steps=7 format=3 uid="uid://b23favnemxmqd"]
+
+[ext_resource type="SpriteFrames" uid="uid://krdmvvhcfbkg" path="res://spriteframes/iceblock.tres" id="1_6pme2"]
+[ext_resource type="Script" uid="uid://dnyagk2np2il3" path="res://scenes_and_scripts/characters/enemies/iceblock.gd" id="1_uydtn"]
+[ext_resource type="AudioStream" uid="uid://bm1boh5sayfbq" path="res://data/sounds/squish.wav" id="2_5voxf"]
+[ext_resource type="AudioStream" uid="uid://cmd5gc76h24gk" path="res://data/sounds/fall.wav" id="3_uydtn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_c3187"]
+size = Vector2(30, 30)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5voxf"]
+size = Vector2(30, 30)
+
+[node name="Iceblock" type="CharacterBody2D"]
+z_index = 50
+collision_layer = 64
+script = ExtResource("1_uydtn")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -3)
+sprite_frames = ExtResource("1_6pme2")
+animation = &"stand"
+centered = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(18, 17)
+shape = SubResource("RectangleShape2D_c3187")
+
+[node name="sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_5voxf")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 258
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(18, 17)
+shape = SubResource("RectangleShape2D_5voxf")
+
+[node name="sound2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_uydtn")
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
+position = Vector2(16, -3.5)
+scale = Vector2(27.2, 31.65)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

@@ -4,7 +4,7 @@ var speed = 360
 var direction = 1
 var jump = -240
 var how_many_times_jumped = 0
-var how_many_times_can_jump = 2
+var how_many_times_can_jump = 3
 
 func _ready() -> void:
 	add_to_group("FireBullet")

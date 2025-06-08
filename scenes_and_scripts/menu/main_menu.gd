@@ -7,4 +7,4 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	if Input.is_action_just_released("ui_enter"):
-		get_tree().change_scene_to_file("res://scenes_and_scripts/levels/misc/test.tscn")
+		get_tree().change_scene_to_file("res://scenes_and_scripts/levels/world1/level1.tscn")

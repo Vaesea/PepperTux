@@ -12,6 +12,7 @@ size = Vector2(32, 32)
 size = Vector2(20, 1)
 
 [node name="BonusBlock" type="StaticBody2D"]
+z_index = 50
 collision_layer = 512
 collision_mask = 2
 script = ExtResource("1_mdwwi")

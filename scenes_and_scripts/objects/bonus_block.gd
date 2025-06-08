@@ -21,13 +21,13 @@ func spawn_object():
 	
 	if content == bonus_block_content.Egg:
 		var egg2 = egg.instantiate()
-		get_tree().current_scene.add_child(egg2)
+		get_tree().current_scene.call_deferred("add_child", egg2)
 		egg2.position = position_of_object
 		$upgrade.play()
 	
 	if content == bonus_block_content.Fire_Flower:
 		var ff = fire_flower.instantiate()
-		get_tree().current_scene.add_child(ff)
+		get_tree().current_scene.call_deferred("add_child", ff)
 		ff.position = position_of_object
 		$upgrade.play()
 

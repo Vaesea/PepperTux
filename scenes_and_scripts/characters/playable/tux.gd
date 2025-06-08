@@ -102,6 +102,7 @@ func take_damage(damage_amount: int):
 
 func die():
 	print("The player died!")
+	TuxManager.current_state = TuxManager.States.Normal
 	Global.total_coins = 0
 	get_tree().paused = true
 	$hurtsound.play()
@@ -122,10 +123,10 @@ func fireball():
 		if facing_direction == 1:
 			fire2.position = self.position + Vector2(20, -10)
 			fire2.set_direction(1)
-			
 		elif facing_direction == -1:
 			fire2.position = self.position + Vector2(-20, -10)
 			fire2.set_direction(-1)
+
 		await get_tree().create_timer(1).timeout
 		can_fire = true
 	

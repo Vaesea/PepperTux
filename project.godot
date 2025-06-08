@@ -15,6 +15,8 @@ config/description="A SuperTux Fangame (I don't know whether that's the correct 
 config/version="0.0.0.0"
 run/main_scene="uid://frt2r73163ur"
 config/features=PackedStringArray("4.4", "GL Compatibility")
+boot_splash/fullsize=false
+boot_splash/image="uid://byn2pkli2s2af"
 config/icon="uid://co2lajourei0u"
 
 [autoload]
@@ -78,7 +80,7 @@ player_action={
 2d_physics/layer_7="Enemies2"
 2d_physics/layer_8="Power-Ups"
 2d_physics/layer_9="Fireballs"
-2d_physics/layer_10="Bonus Blocks"
+2d_physics/layer_10="Ice Bullets"
 
 [rendering]
 
