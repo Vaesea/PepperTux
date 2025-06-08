@@ -7,7 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://bpnqh6jygnmrm" path="res://data/sounds/bigjump.wav" id="4_25i7k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q76ha"]
-size = Vector2(23, 62)
+size = Vector2(23, 63)
 
 [node name="Tux" type="CharacterBody2D"]
 z_index = 60
@@ -32,7 +32,7 @@ sprite_frames = ExtResource("3_3qfok")
 animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, 2)
+position = Vector2(0.5, 1.5)
 shape = SubResource("RectangleShape2D_q76ha")
 
 [node name="Camera2D" type="Camera2D" parent="."]
