@@ -22,7 +22,7 @@ func _physics_process(delta: float) -> void:
 	if can_shoot == true and is_alive == true:
 		$AnimatedSprite2D.play("throw")
 		shoot()
-		await get_tree().create_timer(0.1).timeout
+		await get_tree().create_timer(0.2).timeout
 		$AnimatedSprite2D.play("stand")
 	move_and_slide()
 

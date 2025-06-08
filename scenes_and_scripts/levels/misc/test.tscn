@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://bi07di33om3d0"]
+[gd_scene load_steps=19 format=4 uid="uid://bi07di33om3d0"]
 
 [ext_resource type="Script" uid="uid://cgawg58rbcc7i" path="res://scenes_and_scripts/levels/level.gd" id="1_2yuvf"]
 [ext_resource type="Texture2D" uid="uid://dg3ylaanoee0i" path="res://data/images/background/arctis2.jpg" id="1_5s31t"]
@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://bmxanlg1leng8" path="res://scenes_and_scripts/objects/bonus_block.tscn" id="11_uf03j"]
 [ext_resource type="PackedScene" uid="uid://00yyg3g1m0rd" path="res://scenes_and_scripts/objects/power-ups/fire_flower.tscn" id="13_gwuxi"]
 [ext_resource type="PackedScene" uid="uid://cr3arfboeqw0r" path="res://scenes_and_scripts/objects/brick_block.tscn" id="17_u75p2"]
+[ext_resource type="PackedScene" uid="uid://b23favnemxmqd" path="res://scenes_and_scripts/characters/enemies/iceblock.tscn" id="18_cgs2k"]
 
 [node name="testlevel" type="Node2D"]
 script = ExtResource("1_2yuvf")
@@ -105,10 +106,10 @@ scene = "res://scenes_and_scripts/menu/main_menu.tscn"
 position = Vector2(320, 352)
 
 [node name="BrickBlock" parent="." instance=ExtResource("17_u75p2")]
-position = Vector2(912, 112)
+position = Vector2(896, 112)
 
 [node name="BrickBlock2" parent="." instance=ExtResource("17_u75p2")]
-position = Vector2(944, 112)
+position = Vector2(928, 112)
 snow = true
 
 [node name="BonusBlock" parent="." instance=ExtResource("11_uf03j")]
@@ -124,3 +125,6 @@ content = 2
 
 [node name="BonusBlock4" parent="." instance=ExtResource("11_uf03j")]
 position = Vector2(704, 160)
+
+[node name="Iceblock" parent="." instance=ExtResource("18_cgs2k")]
+position = Vector2(912, 192)
