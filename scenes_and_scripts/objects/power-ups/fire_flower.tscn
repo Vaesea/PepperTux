@@ -11,7 +11,7 @@ size = Vector2(32, 32)
 size = Vector2(32, 32)
 
 [node name="FireFlower" type="CharacterBody2D"]
-z_index = 50
+z_index = 30
 collision_layer = 128
 floor_max_angle = 1.48353
 floor_snap_length = 10.0

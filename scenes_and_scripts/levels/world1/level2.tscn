@@ -262,7 +262,7 @@ position = Vector2(-32, 544)
 
 [node name="LevelEnd" parent="." instance=ExtResource("10_x4sif")]
 position = Vector2(10784, 256)
-scene = "res://scenes_and_scripts/menu/main_menu.tscn"
+scene = "res://scenes_and_scripts/levels/world1/level3.tscn"
 
 [node name="Snowball" parent="." instance=ExtResource("6_5csmp")]
 position = Vector2(5056, 288)
