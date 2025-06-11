@@ -18,6 +18,12 @@ var jump_force = -576.0
 var low_jump_force = -512.0
 var decelerate_on_jump_release = 0.01
 
+# Cutscene
+var in_cutscene = false
+
+# Iframes
+var invincibility = 0.5
+
 # Direction
 var facing_direction = 1
 
@@ -33,7 +39,7 @@ func _physics_process(delta: float) -> void:
 		velocity += get_gravity() * delta
 
 	# Handle jump.
-	if Input.is_action_just_pressed("player_jump") and is_on_floor():
+	if Input.is_action_just_pressed("player_jump") and is_on_floor() and in_cutscene == false:
 		$jumpsound.play()
 		var current_speed = velocity.x
 		if current_speed == 320.0 or current_speed == -320.0:
@@ -41,7 +47,7 @@ func _physics_process(delta: float) -> void:
 		else:
 			velocity.y = low_jump_force
 
-	if Input.is_action_just_released("player_jump") and velocity.y < 0:
+	if Input.is_action_just_released("player_jump") and velocity.y < 0 and in_cutscene == false:
 		velocity.y *= decelerate_on_jump_release
 
 	# Get the input direction and handle the movement/deceleration.
@@ -65,7 +71,7 @@ func _physics_process(delta: float) -> void:
 		$AnimatedSprite2D.play("idle")
 		$Hat.play("idle")
 
-	if not direction == 0:
+	if not direction == 0 and in_cutscene == false:
 		$AnimatedSprite2D.flip_h = direction < 0
 		$Hat.flip_h = direction < 0
 
@@ -112,7 +118,7 @@ func die():
 
 func iframes():
 	TuxManager.can_take_damage = false
-	await get_tree().create_timer(0.5).timeout
+	await get_tree().create_timer(invincibility).timeout
 	TuxManager.can_take_damage = true
 
 func fireball():
@@ -132,3 +138,40 @@ func fireball():
 	
 	if can_fire == false:
 		return
+
+# Cutscene functions
+func stop():
+	walk_speed = 0
+	jump_force = 0
+	low_jump_force = 0
+	velocity.x = 0
+	velocity.y = 0
+	in_cutscene = true
+
+func start():
+	walk_speed = 320.0
+	jump_force = -576.0
+	low_jump_force = -512.0
+	in_cutscene = false
+
+func move_right():
+	$AnimatedSprite2D.flip_h = false
+	velocity.x = 320
+
+func move_left():
+	$AnimatedSprite2D.flip_h = true
+	velocity.x = -320
+
+func jump_high():
+	velocity.y = -576
+
+func jump_low():
+	velocity.y = -512
+
+func face_left():
+	$AnimatedSprite2D.flip_h = true
+	$Hat.flip_h = true
+
+func face_right():
+	$AnimatedSprite2D.flip_h = false
+	$Hat.flip_h = false

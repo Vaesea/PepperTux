@@ -1,0 +1,43 @@
+[gd_resource type="SpriteFrames" load_steps=8 format=3 uid="uid://ctjbjq1feqult"]
+
+[ext_resource type="Texture2D" uid="uid://hfypdofoaudt" path="res://data/images/characters/enemies/snowball/snowball-squished-left.png" id="1_e1lan"]
+[ext_resource type="Texture2D" uid="uid://5dmjs8hn86xk" path="res://data/images/characters/enemies/bouncing_snowball/bouncingsnowball-left-0.png" id="2_eaclh"]
+[ext_resource type="Texture2D" uid="uid://5wix11cb3c1s" path="res://data/images/characters/enemies/bouncing_snowball/bouncingsnowball-left-1.png" id="3_ojbd2"]
+[ext_resource type="Texture2D" uid="uid://bmpo8olfarklv" path="res://data/images/characters/enemies/bouncing_snowball/bouncingsnowball-left-2.png" id="4_ttlg6"]
+[ext_resource type="Texture2D" uid="uid://b1mmk1rl25xub" path="res://data/images/characters/enemies/bouncing_snowball/bouncingsnowball-left-3.png" id="5_k75s5"]
+[ext_resource type="Texture2D" uid="uid://dejcko16fel3i" path="res://data/images/characters/enemies/bouncing_snowball/bouncingsnowball-left-4.png" id="6_2whmv"]
+[ext_resource type="Texture2D" uid="uid://doowysipbf0rq" path="res://data/images/characters/enemies/bouncing_snowball/bouncingsnowball-left-5.png" id="7_chk6x"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_e1lan")
+}],
+"loop": false,
+"name": &"squished",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_eaclh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ojbd2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ttlg6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_k75s5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_2whmv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_chk6x")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 10.0
+}]

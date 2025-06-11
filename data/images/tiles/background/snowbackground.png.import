@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://brtp1ktf7hnpi"
-path="res://.godot/imported/krosh.png-e6b010354e222fcf1bd0c470ea806e0d.ctex"
+uid="uid://dc0kaq8c8wi8x"
+path="res://.godot/imported/snowbackground.png-ad131490885d2bafbbf362297269f98b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://data/images/characters/bosses/icecrusher/krosh.png"
-dest_files=["res://.godot/imported/krosh.png-e6b010354e222fcf1bd0c470ea806e0d.ctex"]
+source_file="res://data/images/tiles/background/snowbackground.png"
+dest_files=["res://.godot/imported/snowbackground.png-ad131490885d2bafbbf362297269f98b.ctex"]
 
 [params]
 

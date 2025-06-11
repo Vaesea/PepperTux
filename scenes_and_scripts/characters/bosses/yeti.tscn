@@ -1,0 +1,86 @@
+[gd_scene load_steps=10 format=3 uid="uid://cxpq2e7w7ayif"]
+
+[ext_resource type="Script" uid="uid://ol1lll5nupta" path="res://scenes_and_scripts/characters/bosses/yeti.gd" id="1_ky2i3"]
+[ext_resource type="SpriteFrames" uid="uid://ojd7thu28frt" path="res://spriteframes/yeti.tres" id="1_odfrq"]
+[ext_resource type="AudioStream" uid="uid://xn7juwi0m1a1" path="res://data/sounds/yeti_gna.wav" id="3_ud5qr"]
+[ext_resource type="AudioStream" uid="uid://b7sfrecm3mul7" path="res://data/sounds/yeti_roar.wav" id="4_xtkry"]
+[ext_resource type="AudioStream" uid="uid://b7oeqys6gavoh" path="res://data/sounds/yeti_finish.ogg" id="5_uo0ip"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_odfrq"]
+size = Vector2(63, 102)
+
+[sub_resource type="Animation" id="Animation_ky2i3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_odfrq"]
+resource_name = "iframes"
+length = 0.9
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [false, true, false, true, false, true, false, true, false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yd4mx"]
+_data = {
+&"RESET": SubResource("Animation_ky2i3"),
+&"iframes": SubResource("Animation_odfrq")
+}
+
+[node name="Yeti" type="CharacterBody2D"]
+z_index = 59
+collision_layer = 64
+script = ExtResource("1_ky2i3")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("1_odfrq")
+animation = &"stand"
+centered = false
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(54, 58)
+shape = SubResource("RectangleShape2D_odfrq")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(54, 58)
+shape = SubResource("RectangleShape2D_odfrq")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_yd4mx")
+}
+
+[node name="gna" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_ud5qr")
+
+[node name="roar" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_xtkry")
+
+[node name="finish" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_uo0ip")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

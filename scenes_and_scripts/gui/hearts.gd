@@ -1,6 +1,6 @@
 extends AnimatedSprite2D
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if TuxManager.health == 3:
 		$".".play("3")
 	elif TuxManager.health == 2:

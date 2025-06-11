@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://c3jwatfholaml"]
+
+[ext_resource type="Script" uid="uid://i2xyfhx2g603" path="res://scenes_and_scripts/characters/bosses/cutsceneyeti.gd" id="1_wwkjc"]
+[ext_resource type="SpriteFrames" uid="uid://ojd7thu28frt" path="res://spriteframes/yeti.tres" id="2_kydpy"]
+[ext_resource type="AudioStream" uid="uid://b7sfrecm3mul7" path="res://data/sounds/yeti_roar.wav" id="4_vdppc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_odfrq"]
+size = Vector2(63, 102)
+
+[node name="CutsceneYeti" type="CharacterBody2D"]
+z_index = 59
+collision_layer = 64
+script = ExtResource("1_wwkjc")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("2_kydpy")
+animation = &"stand"
+centered = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(54, 58)
+shape = SubResource("RectangleShape2D_odfrq")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(54, 58)
+shape = SubResource("RectangleShape2D_odfrq")
+
+[node name="roar" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_vdppc")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

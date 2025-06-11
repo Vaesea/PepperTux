@@ -1,0 +1,53 @@
+[gd_scene load_steps=7 format=3 uid="uid://b7fjshr78kfdw"]
+
+[ext_resource type="Script" uid="uid://dbijkkgm6acjc" path="res://scenes_and_scripts/characters/enemies/bouncing_snowball.gd" id="1_gjaue"]
+[ext_resource type="SpriteFrames" uid="uid://ctjbjq1feqult" path="res://spriteframes/bouncing_snowball.tres" id="1_ppycv"]
+[ext_resource type="AudioStream" uid="uid://bm1boh5sayfbq" path="res://data/sounds/squish.wav" id="2_rvrau"]
+[ext_resource type="AudioStream" uid="uid://cmd5gc76h24gk" path="res://data/sounds/fall.wav" id="3_gjaue"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ppycv"]
+radius = 16.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_evqwn"]
+radius = 16.0
+
+[node name="BouncingSnowball" type="CharacterBody2D"]
+collision_layer = 64
+script = ExtResource("1_gjaue")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("1_ppycv")
+animation = &"walk"
+frame = 4
+frame_progress = 0.308068
+centered = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(17, 16)
+shape = SubResource("CircleShape2D_ppycv")
+
+[node name="WallDetection" type="RayCast2D" parent="."]
+position = Vector2(17, 16)
+exclude_parent = false
+target_position = Vector2(-18, 0)
+collision_mask = 13
+
+[node name="sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_rvrau")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 258
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(17, 16)
+shape = SubResource("CircleShape2D_evqwn")
+
+[node name="sound2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_gjaue")
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
+position = Vector2(17, 16)
+scale = Vector2(4.8, 17.6)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

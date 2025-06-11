@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://frt2r73163ur"]
+[gd_scene load_steps=7 format=3 uid="uid://frt2r73163ur"]
 
 [ext_resource type="Script" uid="uid://b8fnqcfnk4f5u" path="res://scenes_and_scripts/menu/main_menu.gd" id="1_80mcc"]
-[ext_resource type="Texture2D" uid="uid://cmnt76lhl1vgq" path="res://data/images/title/background.jpg" id="1_nhj51"]
+[ext_resource type="Texture2D" uid="uid://dg3ylaanoee0i" path="res://data/images/background/arctis2.jpg" id="2_05brt"]
 [ext_resource type="Texture2D" uid="uid://ccgyn7rqarmiu" path="res://data/images/title/logo.png" id="2_dmlv8"]
 [ext_resource type="FontFile" uid="uid://dlrv58x2b88ss" path="res://data/fonts/Dekko-Regular.ttf" id="3_dmlv8"]
 [ext_resource type="PackedScene" uid="uid://bb86po67j1xk" path="res://scenes_and_scripts/particles/snow.tscn" id="4_h8x48"]
+[ext_resource type="AudioStream" uid="uid://cb86katt8c3ck" path="res://data/music/salcon.ogg" id="6_05brt"]
 
 [node name="MainMenu" type="Node2D"]
 script = ExtResource("1_80mcc")
@@ -12,7 +13,7 @@ script = ExtResource("1_80mcc")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(0.481789, 0.481789, 0.481789, 1)
 position = Vector2(320, 240)
-texture = ExtResource("1_nhj51")
+texture = ExtResource("2_05brt")
 
 [node name="CanvasLayer" parent="." instance=ExtResource("4_h8x48")]
 position = Vector2(1, -53)
@@ -37,7 +38,9 @@ offset_right = 356.0
 offset_bottom = 481.0
 theme_override_fonts/font = ExtResource("3_dmlv8")
 text = "pepperTux 0.0.0
-Most things are from SuperTux.
+Almost all things are from SuperTux.
 This fangame is free and open source, you can find it on GitHub."
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_05brt")
+autoplay = true

@@ -6,11 +6,11 @@ var is_alive = true
 # Ice Bullet 
 const ice_bullet = preload("res://scenes_and_scripts/characters/enemies/projectiles/ice_bullet.tscn")
 var can_shoot = true
+@export var cooldown = 1.5
 
 # Fireball Death
 var fireball_death_jump = -200
 var fireball_death_other_thing = -100
-@export var cooldown = 1.5
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -22,8 +22,6 @@ func _physics_process(delta: float) -> void:
 	if can_shoot == true and is_alive == true:
 		$AnimatedSprite2D.play("throw")
 		shoot()
-		await get_tree().create_timer(0.2).timeout
-		$AnimatedSprite2D.play("stand")
 	move_and_slide()
 
 func squished():
@@ -71,6 +69,9 @@ func shoot():
 		spawned_bullet.set_direction(-1)
 	await get_tree().create_timer(cooldown).timeout
 	can_shoot = true
+	await get_tree().create_timer(0.2).timeout
+	if is_alive == true:
+		$AnimatedSprite2D.play("stand")
 
 	if can_shoot == false or is_alive == false:
 		return
