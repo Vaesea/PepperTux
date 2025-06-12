@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://bv5t2op4n8546"]
+[gd_scene load_steps=18 format=4 uid="uid://bv5t2op4n8546"]
 
 [ext_resource type="Script" uid="uid://ctuenvjfiht7s" path="res://scenes_and_scripts/levels/world1/level_4.gd" id="1_qnm5q"]
 [ext_resource type="Texture2D" uid="uid://b7lew2ntqpg6d" path="res://data/images/background/arctis_dark.jpg" id="2_lut5u"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://obaghlkrwrr6" path="res://scenes_and_scripts/instant_death.tscn" id="9_vbcjh"]
 [ext_resource type="PackedScene" uid="uid://cr3arfboeqw0r" path="res://scenes_and_scripts/objects/brick_block.tscn" id="12_itrp8"]
 [ext_resource type="PackedScene" uid="uid://c3jwatfholaml" path="res://scenes_and_scripts/characters/bosses/cutsceneyeti.tscn" id="15_g5u66"]
+[ext_resource type="FontFile" uid="uid://dlrv58x2b88ss" path="res://data/fonts/Dekko-Regular.ttf" id="16_itrp8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_itrp8"]
 size = Vector2(32, 128)
@@ -331,5 +332,19 @@ shape = SubResource("RectangleShape2D_itrp8")
 
 [node name="CutsceneYeti" parent="." instance=ExtResource("15_g5u66")]
 position = Vector2(14368, -96)
+
+[node name="LevelNumber" type="CanvasLayer" parent="."]
+layer = 128
+
+[node name="Label" type="Label" parent="LevelNumber"]
+offset_top = -7.0
+offset_right = 640.0
+offset_bottom = 46.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("16_itrp8")
+theme_override_font_sizes/font_size = 30
+text = "1-4"
+horizontal_alignment = 1
 
 [connection signal="body_entered" from="YetiCutsceneStart" to="." method="_on_yeti_cutscene_start_body_entered"]

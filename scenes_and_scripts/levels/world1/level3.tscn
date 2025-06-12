@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://cq7wupb81m004"]
+[gd_scene load_steps=17 format=4 uid="uid://cq7wupb81m004"]
 
 [ext_resource type="Script" uid="uid://cgawg58rbcc7i" path="res://scenes_and_scripts/levels/level.gd" id="1_5a84m"]
 [ext_resource type="Texture2D" uid="uid://b2mcgirm3de0k" path="res://data/images/background/bluemountain/bluemountain-middle.png" id="2_i5fyo"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://cudr7apr54dja" path="res://scenes_and_scripts/LevelEnd.tscn" id="10_mq3eh"]
 [ext_resource type="PackedScene" uid="uid://dsbqcv8s57lce" path="res://scenes_and_scripts/characters/enemies/snowball.tscn" id="11_xg0m0"]
 [ext_resource type="PackedScene" uid="uid://b23favnemxmqd" path="res://scenes_and_scripts/characters/enemies/iceblock.tscn" id="12_2nvul"]
+[ext_resource type="FontFile" uid="uid://dlrv58x2b88ss" path="res://data/fonts/Dekko-Regular.ttf" id="16_oc7lb"]
 
 [node name="1-3" type="Node2D"]
 script = ExtResource("1_5a84m")
@@ -205,3 +206,17 @@ position = Vector2(-32, 544)
 [node name="LevelEnd" parent="." instance=ExtResource("10_mq3eh")]
 position = Vector2(16896, 384)
 scene = "res://scenes_and_scripts/levels/world1/level4.tscn"
+
+[node name="LevelNumber" type="CanvasLayer" parent="."]
+layer = 128
+
+[node name="Label" type="Label" parent="LevelNumber"]
+offset_top = -7.0
+offset_right = 640.0
+offset_bottom = 46.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("16_oc7lb")
+theme_override_font_sizes/font_size = 30
+text = "1-3"
+horizontal_alignment = 1

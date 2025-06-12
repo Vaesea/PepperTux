@@ -17,6 +17,8 @@ texture = ExtResource("2_05brt")
 
 [node name="CanvasLayer" parent="." instance=ExtResource("4_h8x48")]
 position = Vector2(1, -53)
+scale = Vector2(8.3629, 1.155)
+amount = 125
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
 position = Vector2(320, 128)
@@ -37,7 +39,7 @@ offset_top = 394.0
 offset_right = 356.0
 offset_bottom = 481.0
 theme_override_fonts/font = ExtResource("3_dmlv8")
-text = "pepperTux 0.0.0
+text = "pepperTux 0.1.0
 Almost all things are from SuperTux.
 This fangame is free and open source, you can find it on GitHub."
 

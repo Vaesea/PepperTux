@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ddp5m0qwlhp3b"
-path="res://.godot/imported/bluemountain-bottom.png-3d4def263c32d4bbf62246fb2df835f9.ctex"
+uid="uid://bpbql20kmkgm2"
+path="res://.godot/imported/forest.jpg-9e1badefd0f174941457680774037c04.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://data/images/background/bluemountain/bluemountain-bottom.png"
-dest_files=["res://.godot/imported/bluemountain-bottom.png-3d4def263c32d4bbf62246fb2df835f9.ctex"]
+source_file="res://data/images/background/forest.jpg"
+dest_files=["res://.godot/imported/forest.jpg-9e1badefd0f174941457680774037c04.ctex"]
 
 [params]
 

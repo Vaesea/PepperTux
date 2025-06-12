@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://0yua6rx0g1tv"]
+[gd_scene load_steps=17 format=4 uid="uid://0yua6rx0g1tv"]
 
 [ext_resource type="Script" uid="uid://cgawg58rbcc7i" path="res://scenes_and_scripts/levels/level.gd" id="1_awd58"]
 [ext_resource type="Texture2D" uid="uid://dg3ylaanoee0i" path="res://data/images/background/arctis2.jpg" id="2_ur05i"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://obaghlkrwrr6" path="res://scenes_and_scripts/instant_death.tscn" id="9_kqgjn"]
 [ext_resource type="PackedScene" uid="uid://cudr7apr54dja" path="res://scenes_and_scripts/LevelEnd.tscn" id="10_cbmce"]
 [ext_resource type="PackedScene" uid="uid://dsbqcv8s57lce" path="res://scenes_and_scripts/characters/enemies/snowball.tscn" id="12_4lvpt"]
+[ext_resource type="FontFile" uid="uid://dlrv58x2b88ss" path="res://data/fonts/Dekko-Regular.ttf" id="16_vjqk0"]
 
 [node name="1-1" type="Node2D"]
 script = ExtResource("1_awd58")
@@ -382,3 +383,17 @@ position = Vector2(-32, 544)
 [node name="LevelEnd" parent="." instance=ExtResource("10_cbmce")]
 position = Vector2(14432, 256)
 scene = "res://scenes_and_scripts/levels/world1/level2.tscn"
+
+[node name="LevelNumber" type="CanvasLayer" parent="."]
+layer = 128
+
+[node name="Label" type="Label" parent="LevelNumber"]
+offset_top = -7.0
+offset_right = 640.0
+offset_bottom = 46.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("16_vjqk0")
+theme_override_font_sizes/font_size = 30
+text = "1-1"
+horizontal_alignment = 1

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://j5c2jvtl6f4d"]
+[gd_scene load_steps=12 format=3 uid="uid://j5c2jvtl6f4d"]
 
 [ext_resource type="Script" uid="uid://cgawg58rbcc7i" path="res://scenes_and_scripts/levels/level.gd" id="1_8mtnu"]
 [ext_resource type="Texture2D" uid="uid://dg3ylaanoee0i" path="res://data/images/background/arctis2.jpg" id="2_x0jc8"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bck0nuey8s6tl" path="res://scenes_and_scripts/characters/playable/tux.tscn" id="5_es8sp"]
 [ext_resource type="TileSet" uid="uid://cphge636dp4k4" path="res://tilesets/tiles.tres" id="6_81hu6"]
 [ext_resource type="PackedScene" uid="uid://dplbvlrsook58" path="res://scenes_and_scripts/gui/gui.tscn" id="10_rl532"]
+[ext_resource type="FontFile" uid="uid://dlrv58x2b88ss" path="res://data/fonts/Dekko-Regular.ttf" id="11_r2dtg"]
 [ext_resource type="PackedScene" uid="uid://10srfatlh0kw" path="res://scenes_and_scripts/EndScreen.tscn" id="11_skx1q"]
 [ext_resource type="PackedScene" uid="uid://obaghlkrwrr6" path="res://scenes_and_scripts/instant_death.tscn" id="12_h1t7e"]
 [ext_resource type="PackedScene" uid="uid://cudr7apr54dja" path="res://scenes_and_scripts/LevelEnd.tscn" id="13_tea0x"]
@@ -69,3 +70,17 @@ position = Vector2(-32, 544)
 [node name="LevelEnd" parent="." instance=ExtResource("13_tea0x")]
 position = Vector2(-96, 416)
 scene = "res://scenes_and_scripts/menu/main_menu.tscn"
+
+[node name="LevelNumber" type="CanvasLayer" parent="."]
+layer = 128
+
+[node name="Label" type="Label" parent="LevelNumber"]
+offset_top = -7.0
+offset_right = 640.0
+offset_bottom = 46.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("11_r2dtg")
+theme_override_font_sizes/font_size = 30
+text = "Level Number"
+horizontal_alignment = 1

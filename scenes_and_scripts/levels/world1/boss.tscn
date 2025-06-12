@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://0huabs7eikne"]
+[gd_scene load_steps=12 format=4 uid="uid://0huabs7eikne"]
 
 [ext_resource type="Script" uid="uid://cgawg58rbcc7i" path="res://scenes_and_scripts/levels/level.gd" id="1_xqxrx"]
 [ext_resource type="Texture2D" uid="uid://dg3ylaanoee0i" path="res://data/images/background/arctis2.jpg" id="2_42262"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://10srfatlh0kw" path="res://scenes_and_scripts/EndScreen.tscn" id="8_3kp4i"]
 [ext_resource type="PackedScene" uid="uid://obaghlkrwrr6" path="res://scenes_and_scripts/instant_death.tscn" id="9_yiwnk"]
 [ext_resource type="PackedScene" uid="uid://cxpq2e7w7ayif" path="res://scenes_and_scripts/characters/bosses/yeti.tscn" id="10_xqxrx"]
+[ext_resource type="FontFile" uid="uid://dlrv58x2b88ss" path="res://data/fonts/Dekko-Regular.ttf" id="11_42262"]
 
 [node name="1-B" type="Node2D"]
 script = ExtResource("1_xqxrx")
@@ -59,3 +60,17 @@ position = Vector2(-32, 544)
 
 [node name="Yeti" parent="." instance=ExtResource("10_xqxrx")]
 position = Vector2(384, 320)
+
+[node name="LevelNumber" type="CanvasLayer" parent="."]
+layer = 128
+
+[node name="Label" type="Label" parent="LevelNumber"]
+offset_top = -7.0
+offset_right = 640.0
+offset_bottom = 46.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("11_42262")
+theme_override_font_sizes/font_size = 30
+text = "Boss Fight - Yeti"
+horizontal_alignment = 1

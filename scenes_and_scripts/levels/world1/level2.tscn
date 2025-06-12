@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://01icx12rsojp"]
+[gd_scene load_steps=16 format=4 uid="uid://01icx12rsojp"]
 
 [ext_resource type="Script" uid="uid://cgawg58rbcc7i" path="res://scenes_and_scripts/levels/level.gd" id="1_ofp3c"]
 [ext_resource type="Texture2D" uid="uid://bidx8tyh3lkic" path="res://data/images/background/cave2.jpg" id="2_5csmp"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://cr3arfboeqw0r" path="res://scenes_and_scripts/objects/brick_block.tscn" id="10_uyfh0"]
 [ext_resource type="PackedScene" uid="uid://cudr7apr54dja" path="res://scenes_and_scripts/LevelEnd.tscn" id="10_x4sif"]
 [ext_resource type="PackedScene" uid="uid://bmxanlg1leng8" path="res://scenes_and_scripts/objects/bonus_block.tscn" id="12_h6n7j"]
+[ext_resource type="FontFile" uid="uid://dlrv58x2b88ss" path="res://data/fonts/Dekko-Regular.ttf" id="15_e7wkh"]
 
 [node name="1-2" type="Node2D"]
 script = ExtResource("1_ofp3c")
@@ -269,3 +270,17 @@ position = Vector2(5056, 288)
 
 [node name="Snowball2" parent="." instance=ExtResource("6_5csmp")]
 position = Vector2(9216, 320)
+
+[node name="LevelNumber" type="CanvasLayer" parent="."]
+layer = 128
+
+[node name="Label" type="Label" parent="LevelNumber"]
+offset_top = -7.0
+offset_right = 640.0
+offset_bottom = 46.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("15_e7wkh")
+theme_override_font_sizes/font_size = 30
+text = "1-2"
+horizontal_alignment = 1
