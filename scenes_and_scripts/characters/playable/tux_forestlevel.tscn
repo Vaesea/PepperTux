@@ -37,7 +37,8 @@ shape = SubResource("RectangleShape2D_q76ha")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 limit_left = 0
-limit_bottom = 480
+limit_top = -352
+limit_bottom = 800
 
 [node name="hurtsound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_p5jjp")

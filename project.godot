@@ -17,7 +17,7 @@ run/main_scene="uid://frt2r73163ur"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 boot_splash/fullsize=false
 boot_splash/image="uid://byn2pkli2s2af"
-config/icon="uid://co2lajourei0u"
+config/icon="uid://b7s6r6hhj1m3q"
 
 [autoload]
 
