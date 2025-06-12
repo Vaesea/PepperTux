@@ -6,7 +6,7 @@ class_name Tux
 # https://www.youtube.com/playlist?list=PLMb6Yv6-w-RWngEjn_YeMzVwgyXBZ73Bf
 # https://www.youtube.com/watch?v=M3BKy83wJ-g
 
-# Firing something like fireball or ice bullet
+# Firing something like fireball
 var is_firing = false
 var can_fire = true
 
