@@ -1,6 +1,6 @@
 [gd_scene load_steps=17 format=4 uid="uid://0yua6rx0g1tv"]
 
-[ext_resource type="Script" uid="uid://cgawg58rbcc7i" path="res://scenes_and_scripts/levels/level.gd" id="1_awd58"]
+[ext_resource type="Script" uid="uid://dcce82s3wroi4" path="res://scenes_and_scripts/levels/world1/level_1.gd" id="1_vjqk0"]
 [ext_resource type="Texture2D" uid="uid://dg3ylaanoee0i" path="res://data/images/background/arctis2.jpg" id="2_ur05i"]
 [ext_resource type="PackedScene" uid="uid://bb86po67j1xk" path="res://scenes_and_scripts/particles/snow.tscn" id="3_4lvpt"]
 [ext_resource type="AudioStream" uid="uid://ycv32k7xccsb" path="res://data/music/chipdisko.ogg" id="4_t72gp"]
@@ -18,7 +18,7 @@
 [ext_resource type="FontFile" uid="uid://dlrv58x2b88ss" path="res://data/fonts/Dekko-Regular.ttf" id="16_vjqk0"]
 
 [node name="1-1" type="Node2D"]
-script = ExtResource("1_awd58")
+script = ExtResource("1_vjqk0")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 

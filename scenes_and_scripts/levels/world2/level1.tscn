@@ -1,6 +1,6 @@
 [gd_scene load_steps=18 format=4 uid="uid://s84x4nsdf48h"]
 
-[ext_resource type="Script" uid="uid://cgawg58rbcc7i" path="res://scenes_and_scripts/levels/level.gd" id="1_84xxv"]
+[ext_resource type="Script" uid="uid://cqo2ovt6xncv" path="res://scenes_and_scripts/levels/world2/level_1.gd" id="1_8801s"]
 [ext_resource type="Texture2D" uid="uid://bpbql20kmkgm2" path="res://data/images/background/forest.jpg" id="2_51g0i"]
 [ext_resource type="AudioStream" uid="uid://b1mynrn2322e6" path="res://data/music/forest.ogg" id="3_vssa7"]
 [ext_resource type="PackedScene" uid="uid://bck0nuey8s6tl" path="res://scenes_and_scripts/characters/playable/tux.tscn" id="5_7dot8"]
@@ -19,7 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://t4nprb3xvyoh" path="res://scenes_and_scripts/objects/coin.tscn" id="17_8801s"]
 
 [node name="testlevel" type="Node2D"]
-script = ExtResource("1_84xxv")
+script = ExtResource("1_8801s")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
