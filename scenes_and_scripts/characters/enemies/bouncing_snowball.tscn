@@ -49,7 +49,7 @@ shape = SubResource("CircleShape2D_evqwn")
 stream = ExtResource("3_gjaue")
 
 [node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
-position = Vector2(17, 16)
+position = Vector2(16, 16)
 scale = Vector2(4.8, 17.6)
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

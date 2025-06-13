@@ -1,0 +1,85 @@
+[gd_scene load_steps=11 format=3 uid="uid://bnyadvcha37aq"]
+
+[ext_resource type="Script" uid="uid://cgawg58rbcc7i" path="res://scenes_and_scripts/levels/level.gd" id="1_al6f5"]
+[ext_resource type="Texture2D" uid="uid://bpbql20kmkgm2" path="res://data/images/background/forest.jpg" id="2_d634r"]
+[ext_resource type="AudioStream" uid="uid://b1mynrn2322e6" path="res://data/music/forest.ogg" id="3_ruoml"]
+[ext_resource type="TileSet" uid="uid://11kmcja3sq4s" path="res://tilesets/forest.tres" id="4_rf62y"]
+[ext_resource type="PackedScene" uid="uid://bck0nuey8s6tl" path="res://scenes_and_scripts/characters/playable/tux.tscn" id="5_0i8ox"]
+[ext_resource type="PackedScene" uid="uid://dplbvlrsook58" path="res://scenes_and_scripts/gui/gui.tscn" id="12_q6x6s"]
+[ext_resource type="PackedScene" uid="uid://10srfatlh0kw" path="res://scenes_and_scripts/EndScreen.tscn" id="13_x6n6s"]
+[ext_resource type="PackedScene" uid="uid://obaghlkrwrr6" path="res://scenes_and_scripts/instant_death.tscn" id="14_wd2x8"]
+[ext_resource type="PackedScene" uid="uid://cudr7apr54dja" path="res://scenes_and_scripts/LevelEnd.tscn" id="15_hhasa"]
+[ext_resource type="FontFile" uid="uid://dlrv58x2b88ss" path="res://data/fonts/Dekko-Regular.ttf" id="16_mixbp"]
+
+[node name="testlevel" type="Node2D"]
+script = ExtResource("1_al6f5")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+z_index = -300
+motion_scale = Vector2(0.5, 0.5)
+motion_mirroring = Vector2(800, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(0, -448)
+texture = ExtResource("2_d634r")
+centered = false
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_ruoml")
+autoplay = true
+
+[node name="Tilemaps" type="Node" parent="."]
+
+[node name="Background2" type="TileMapLayer" parent="Tilemaps"]
+z_index = -101
+tile_set = ExtResource("4_rf62y")
+
+[node name="Background" type="TileMapLayer" parent="Tilemaps"]
+z_index = -100
+position = Vector2(1, 0)
+tile_set = ExtResource("4_rf62y")
+
+[node name="Interactive" type="TileMapLayer" parent="Tilemaps"]
+tile_set = ExtResource("4_rf62y")
+
+[node name="Foreground" type="TileMapLayer" parent="Tilemaps"]
+z_index = 100
+position = Vector2(1, 0)
+tile_set = ExtResource("4_rf62y")
+
+[node name="Tux" parent="." instance=ExtResource("5_0i8ox")]
+position = Vector2(69, 353)
+
+[node name="Coins" type="Node2D" parent="."]
+
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="Bonus Blocks" type="Node2D" parent="."]
+
+[node name="GUI" parent="." instance=ExtResource("12_q6x6s")]
+
+[node name="EndScreen" parent="." instance=ExtResource("13_x6n6s")]
+layer = 3
+
+[node name="InstantDeath" parent="." instance=ExtResource("14_wd2x8")]
+position = Vector2(-32, 544)
+
+[node name="LevelEnd" parent="." instance=ExtResource("15_hhasa")]
+position = Vector2(10016, 352)
+scene = "res://scenes_and_scripts/menu/main_menu.tscn"
+
+[node name="LevelNumber" type="CanvasLayer" parent="."]
+layer = 128
+
+[node name="Label" type="Label" parent="LevelNumber"]
+offset_top = -7.0
+offset_right = 640.0
+offset_bottom = 46.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("16_mixbp")
+theme_override_font_sizes/font_size = 30
+text = "Level Number"
+horizontal_alignment = 1
