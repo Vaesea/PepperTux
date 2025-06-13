@@ -19,4 +19,4 @@ func _on_yeti_cutscene_start_body_entered(body) -> void:
 		await get_tree().create_timer(1.5).timeout
 		$EndScreen.visible = true
 		await get_tree().create_timer(1).timeout
-		get_tree().change_scene_to_file("res://scenes_and_scripts/menu/main_menu.tscn")
+		get_tree().change_scene_to_file("res://scenes_and_scripts/levels/world2/level1.tscn")
