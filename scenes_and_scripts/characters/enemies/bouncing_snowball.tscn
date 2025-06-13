@@ -12,7 +12,9 @@ radius = 16.0
 radius = 16.0
 
 [node name="BouncingSnowball" type="CharacterBody2D"]
+z_index = 50
 collision_layer = 64
+collision_mask = 9
 script = ExtResource("1_gjaue")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

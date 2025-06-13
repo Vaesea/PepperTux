@@ -1,8 +1,10 @@
-[gd_resource type="TileSet" load_steps=7 format=3 uid="uid://11kmcja3sq4s"]
+[gd_resource type="TileSet" load_steps=10 format=3 uid="uid://11kmcja3sq4s"]
 
 [ext_resource type="Texture2D" uid="uid://cdthxrx20wq1v" path="res://data/images/tiles/forest/forest.png" id="1_m02sg"]
 [ext_resource type="Texture2D" uid="uid://cr8h0me58uiv3" path="res://data/images/tiles/forest/forestdecorations.png" id="2_fxr2f"]
 [ext_resource type="Texture2D" uid="uid://qxanpcmmde7e" path="res://data/images/tiles/forest/trees.png" id="3_6hd7k"]
+[ext_resource type="PackedScene" uid="uid://cn1hxfgr34tf7" path="res://scenes_and_scripts/animated_tiles/goal-top.tscn" id="4_evnwd"]
+[ext_resource type="PackedScene" uid="uid://bv6aw347wm3g0" path="res://scenes_and_scripts/animated_tiles/goal-main.tscn" id="5_w333l"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vlh41"]
 texture = ExtResource("1_m02sg")
@@ -460,9 +462,15 @@ texture_region_size = Vector2i(32, 32)
 7:14/0 = 0
 8:14/0 = 0
 
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_isqcy"]
+resource_name = "Goal Tiles"
+scenes/3/scene = ExtResource("4_evnwd")
+scenes/4/scene = ExtResource("5_w333l")
+
 [resource]
 tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_vlh41")
 sources/1 = SubResource("TileSetAtlasSource_evnwd")
 sources/2 = SubResource("TileSetAtlasSource_w333l")
+sources/3 = SubResource("TileSetScenesCollectionSource_isqcy")

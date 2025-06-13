@@ -15,7 +15,7 @@ func _process(_delta: float) -> void:
 		get_tree().change_scene_to_file("res://scenes_and_scripts/levels/world1/level1.tscn")
 
 	if Input.is_key_pressed(KEY_2):
-		OS.alert("World 2 has not been added yet.", "Error")
+		get_tree().change_scene_to_file("res://scenes_and_scripts/levels/world2/level1.tscn")
 
 	if Input.is_key_pressed(KEY_3):
 		OS.alert("World 3 has not been added yet.", "Error")
