@@ -33,4 +33,4 @@ Remaxim (https://opengameart.org/content/airship-song-orchestral-remix) (This is
 Lukas Nystrand (as Mortimer Twang) (This is copied from the SuperTux credits)
 
 ### Level Design
-Vaesea (me again. there's no actual levels yet)
+Vaesea
