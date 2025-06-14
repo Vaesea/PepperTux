@@ -19,7 +19,7 @@ script = ExtResource("1_b65gp")
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 z_index = -300
 motion_scale = Vector2(0.5, 0.5)
-motion_mirroring = Vector2(800, 0)
+motion_mirroring = Vector2(800, 600)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 position = Vector2(0, -120)
