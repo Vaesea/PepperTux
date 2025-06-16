@@ -1,0 +1,53 @@
+[gd_scene load_steps=7 format=3 uid="uid://iml1hrrtino7"]
+
+[ext_resource type="SpriteFrames" uid="uid://do48lslu0wpvo" path="res://spriteframes/spiky.tres" id="1_lveo1"]
+[ext_resource type="Script" uid="uid://c0i1jh8p64yrn" path="res://scenes_and_scripts/characters/enemies/spiky.gd" id="1_r0n4l"]
+[ext_resource type="AudioStream" uid="uid://bm1boh5sayfbq" path="res://data/sounds/squish.wav" id="2_r0n4l"]
+[ext_resource type="AudioStream" uid="uid://cmd5gc76h24gk" path="res://data/sounds/fall.wav" id="3_kwg8n"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1r2he"]
+size = Vector2(27, 31)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m67wr"]
+size = Vector2(27, 31)
+
+[node name="Spiky" type="CharacterBody2D"]
+z_index = 50
+collision_layer = 64
+script = ExtResource("1_r0n4l")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-5, -10)
+sprite_frames = ExtResource("1_lveo1")
+animation = &"squished"
+centered = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(16.5, 16.5)
+shape = SubResource("RectangleShape2D_1r2he")
+
+[node name="WallDetection" type="RayCast2D" parent="."]
+position = Vector2(16, 16)
+exclude_parent = false
+target_position = Vector2(-15, 0)
+collision_mask = 13
+
+[node name="sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_r0n4l")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 258
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(16.5, 16.5)
+shape = SubResource("RectangleShape2D_m67wr")
+
+[node name="sound2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_kwg8n")
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
+position = Vector2(16, -16)
+scale = Vector2(4.8, 31.65)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

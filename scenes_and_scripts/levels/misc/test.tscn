@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://bi07di33om3d0"]
+[gd_scene load_steps=20 format=4 uid="uid://bi07di33om3d0"]
 
 [ext_resource type="Script" uid="uid://cgawg58rbcc7i" path="res://scenes_and_scripts/levels/level.gd" id="1_2yuvf"]
 [ext_resource type="Texture2D" uid="uid://dg3ylaanoee0i" path="res://data/images/background/arctis2.jpg" id="1_5s31t"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://7k1uqe0h0cwk" path="res://scenes_and_scripts/characters/enemies/jumpy.tscn" id="9_gh1vu"]
 [ext_resource type="PackedScene" uid="uid://dplbvlrsook58" path="res://scenes_and_scripts/gui/gui.tscn" id="11_bao7e"]
 [ext_resource type="PackedScene" uid="uid://bmxanlg1leng8" path="res://scenes_and_scripts/objects/bonus_block.tscn" id="11_uf03j"]
+[ext_resource type="PackedScene" uid="uid://iml1hrrtino7" path="res://scenes_and_scripts/characters/enemies/spiky.tscn" id="12_iqj6k"]
 [ext_resource type="PackedScene" uid="uid://00yyg3g1m0rd" path="res://scenes_and_scripts/objects/power-ups/fire_flower.tscn" id="13_gwuxi"]
 [ext_resource type="PackedScene" uid="uid://cr3arfboeqw0r" path="res://scenes_and_scripts/objects/brick_block.tscn" id="17_u75p2"]
 [ext_resource type="PackedScene" uid="uid://b23favnemxmqd" path="res://scenes_and_scripts/characters/enemies/iceblock.tscn" id="18_cgs2k"]
@@ -83,11 +84,14 @@ position = Vector2(416, 288)
 [node name="Snowball" parent="Enemies" instance=ExtResource("4_gioao")]
 position = Vector2(1120, 384)
 
-[node name="Snowball2" parent="Enemies" instance=ExtResource("4_gioao")]
-position = Vector2(256, 384)
-
 [node name="Jumpy" parent="Enemies" instance=ExtResource("9_gh1vu")]
 position = Vector2(1088, 96)
+
+[node name="Iceblock" parent="Enemies" instance=ExtResource("18_cgs2k")]
+position = Vector2(912, 192)
+
+[node name="Spiky" parent="Enemies" instance=ExtResource("12_iqj6k")]
+position = Vector2(224, 384)
 
 [node name="Bonus Blocks" type="Node2D" parent="."]
 
@@ -125,6 +129,3 @@ content = 2
 
 [node name="BonusBlock4" parent="." instance=ExtResource("11_uf03j")]
 position = Vector2(704, 160)
-
-[node name="Iceblock" parent="." instance=ExtResource("18_cgs2k")]
-position = Vector2(912, 192)

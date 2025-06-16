@@ -1,0 +1,33 @@
+[gd_resource type="SpriteFrames" load_steps=4 format=3 uid="uid://do48lslu0wpvo"]
+
+[ext_resource type="Texture2D" uid="uid://lvtxmgngkl4i" path="res://data/images/characters/enemies/spiky/spiky-left-1.png" id="1_m3udb"]
+[ext_resource type="Texture2D" uid="uid://daxm7ngrkeb4k" path="res://data/images/characters/enemies/spiky/spiky-left-0.png" id="2_x6ans"]
+[ext_resource type="Texture2D" uid="uid://dbhpgpy48k7f" path="res://data/images/characters/enemies/spiky/spiky-left-2.png" id="3_3oe27"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_m3udb")
+}],
+"loop": true,
+"name": &"squished",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_x6ans")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_m3udb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_3oe27")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_m3udb")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]

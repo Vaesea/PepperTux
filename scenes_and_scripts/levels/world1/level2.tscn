@@ -167,15 +167,6 @@ position = Vector2(2944, 256)
 
 [node name="Enemies" type="Node2D" parent="."]
 
-[node name="Iceblock4" parent="Enemies" instance=ExtResource("7_h6n7j")]
-position = Vector2(6656, 192)
-
-[node name="Iceblock5" parent="Enemies" instance=ExtResource("7_h6n7j")]
-position = Vector2(7488, 192)
-
-[node name="Iceblock6" parent="Enemies" instance=ExtResource("7_h6n7j")]
-position = Vector2(9296, 160)
-
 [node name="Iceblock7" parent="Enemies" instance=ExtResource("7_h6n7j")]
 position = Vector2(10048, 192)
 
@@ -197,11 +188,11 @@ position = Vector2(2272, 384)
 [node name="Iceblock" parent="Enemies" instance=ExtResource("7_h6n7j")]
 position = Vector2(1488, 288)
 
-[node name="Iceblock2" parent="Enemies" instance=ExtResource("7_h6n7j")]
-position = Vector2(3104, 224)
-
 [node name="Iceblock3" parent="Enemies" instance=ExtResource("7_h6n7j")]
 position = Vector2(4224, 384)
+
+[node name="Iceblock5" parent="Enemies" instance=ExtResource("7_h6n7j")]
+position = Vector2(3104, 224)
 
 [node name="Snowball6" parent="Enemies" instance=ExtResource("6_5csmp")]
 position = Vector2(4160, 384)
