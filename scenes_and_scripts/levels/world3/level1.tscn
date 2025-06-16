@@ -180,7 +180,7 @@ position = Vector2(-32, 544)
 
 [node name="LevelEnd" parent="." instance=ExtResource("13_lcb82")]
 position = Vector2(10016, 352)
-scene = "res://scenes_and_scripts/menu/main_menu.tscn"
+scene = "res://scenes_and_scripts/levels/world3/level2.tscn"
 
 [node name="LevelNumber" type="CanvasLayer" parent="."]
 layer = 128
