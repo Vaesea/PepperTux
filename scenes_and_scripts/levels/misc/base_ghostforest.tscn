@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cgawg58rbcc7i" path="res://scenes_and_scripts/levels/level.gd" id="1_b65gp"]
 [ext_resource type="Texture2D" uid="uid://762hm7o2r8xj" path="res://data/images/background/ghostforest.jpg" id="2_b65gp"]
-[ext_resource type="AudioStream" uid="uid://b1mynrn2322e6" path="res://data/music/forest.ogg" id="3_pgbl3"]
+[ext_resource type="AudioStream" uid="uid://dkaykyh7lqj04" path="res://data/music/ghostforest2.ogg" id="3_b65gp"]
 [ext_resource type="TileSet" uid="uid://11kmcja3sq4s" path="res://tilesets/forest.tres" id="4_m74so"]
 [ext_resource type="PackedScene" uid="uid://bck0nuey8s6tl" path="res://scenes_and_scripts/characters/playable/tux.tscn" id="5_2j245"]
 [ext_resource type="PackedScene" uid="uid://dplbvlrsook58" path="res://scenes_and_scripts/gui/gui.tscn" id="6_2lp83"]
@@ -27,7 +27,7 @@ texture = ExtResource("2_b65gp")
 centered = false
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_pgbl3")
+stream = ExtResource("3_b65gp")
 autoplay = true
 
 [node name="Tilemaps" type="Node" parent="."]
