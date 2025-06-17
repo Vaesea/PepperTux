@@ -1,6 +1,6 @@
 [gd_scene load_steps=17 format=4 uid="uid://3tilbtvlf57h"]
 
-[ext_resource type="Script" uid="uid://cgawg58rbcc7i" path="res://scenes_and_scripts/levels/level.gd" id="1_qfw7p"]
+[ext_resource type="Script" uid="uid://p0stxgbv3yfm" path="res://scenes_and_scripts/levels/world3/level_1.gd" id="1_0b853"]
 [ext_resource type="Texture2D" uid="uid://762hm7o2r8xj" path="res://data/images/background/ghostforest.jpg" id="2_0b853"]
 [ext_resource type="AudioStream" uid="uid://dkaykyh7lqj04" path="res://data/music/ghostforest2.ogg" id="3_0b853"]
 [ext_resource type="TileSet" uid="uid://11kmcja3sq4s" path="res://tilesets/forest.tres" id="4_cqbmu"]
@@ -18,7 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://7k1uqe0h0cwk" path="res://scenes_and_scripts/characters/enemies/jumpy.tscn" id="15_eyety"]
 
 [node name="testlevel" type="Node2D"]
-script = ExtResource("1_qfw7p")
+script = ExtResource("1_0b853")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
